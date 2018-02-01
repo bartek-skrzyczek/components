@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)http://breakout.tld:3000/styleguide/drafts/draft_quick_invite_general_view_follow_mr.html -->
+<html lang="en" class="toolbarActive edit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>New main structure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./New main structure_1_files/jquery.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" media="all" href="./New main structure_files/v4_structure.css">
+    <link rel="stylesheet" media="all" href="./New main structure_files/v4.css">
+    <link rel="stylesheet" media="all" href="./New main structure_files/v4-global.css">
+    <script type="text/javascript">
+    <!--
+
+        $(window).on('mousewheel DOMMouseScroll', function (e) {
+
+            var direction = (function () {
+
+                var delta = (e.type === 'DOMMouseScroll' ?
+                             e.originalEvent.detail * -40 :
+                             e.originalEvent.wheelDelta);
+
+                return delta > 0 ? 0 : 1;
+            }());
+
+            if(direction === 1) {
+               $('#mainTopOne').height(0);
+            }
+            if(direction === 0) {
+               $('#mainTopOne').height(30);
+            }
+        });
+
+        function toggle_visibility(id) {
+           var e = document.getElementById(id);
+           if(e.style.display == 'none')
+              e.style.display = 'block';
+           else
+              e.style.display = 'none';
+        }
+
+        function toggle_height(id) {
+           var e = document.getElementById(id);
+           e.style.height = '0';
+        }
+
+    //-->
+    </script>
+
+  <style type="text/css" id="GINGER_SOFTWARE_style">.GINGER_SOFTWARE_noMark { background : transparent; }  .GINGER_SOFTWARE_wrapper{ position: absolute; overflow: hidden; margin: 0px; padding: 0px; border: 0px solid transparent } .GINGER_SOFTWARE_contour { position : absolute; margin: 0px; }  .GINGER_SOFTWARE_richText { margin : 0px; padding-bottom: 3px; border-width: 0px; border-color: transparent; display: block; color: transparent; -webkit-text-fill-color: transparent; overflow: hidden; white-space: pre-wrap;}  .GINGER_SOFTWARE_inputWrapper .GINGER_SOFTWARE_richText {position: absolute;}  .GINGER_SOFTWARE_canvas { display:none; background-repeat:no-repeat;}  .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark {border-top-left-radius:2px; border-top-right-radius:2px; border-bottom-right-radius:2px; border-bottom-left-radius:2px;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark {background-image:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQ0Y2OENGMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQ0Y2OEQwMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEVDRjY4Q0QzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEVDRjY4Q0UzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5RRxRxAAAAD0lEQVR42mK48+w7QIABAAVbAroowN08AAAAAElFTkSuQmCC)!important;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark.GINGER_SOFTWARE_synonym {background-image:url(data:image/gif;base64,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)!important;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark.GINGER_SOFTWARE_noSuggestion {background-image:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQ0Y2OENGMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQ0Y2OEQwMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEVDRjY4Q0QzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEVDRjY4Q0UzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5RRxRxAAAAD0lEQVR42mK48+w7QIABAAVbAroowN08AAAAAElFTkSuQmCC)!important;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_mark {position:relative; background-image:none!important;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightLeft { position : absolute; left:-2px; top:0px; bottom:0px; width:2px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightRight { position : absolute; right:-2px; top:0px; bottom:0px; width:2px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightTop { position : absolute; left:0px; right:0px; top:-2px; height:3px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightBottom { position : absolute; left:0px; right:0px; bottom:-2px; height:3px;}</style></head>
+
+  <!--
+  IMPORTANT ! ==================================
+  flex items can not be seperated by any wrapper
+  ==============================================
+  -->
+
+  <body class="" basecontrol="" ginger_software_stylesheet="true" ginger_software_doc="true"><canvas id="GINGER_SOFTWARE_canvas0" class="GINGER_SOFTWARE_canvas" height="26" width="503"></canvas><div id="GINGER_SOFTWARE_wrapper0" class="GINGER_SOFTWARE_wrapper GINGER_SOFTWARE_inputWrapper" style="display: block; left: 1374.31px; top: 282px; width: 505px; height: 28px;"><div class="GINGER_SOFTWARE_contour" style="left: 0px; top: 0px; width: 505px; height: 28px; padding: 0px 30px 0px 6px; border: 1px solid transparent; border-radius: 3px; border-collapse: separate; border-spacing: 0px; -webkit-border-image: none; outline: rgb(17, 17, 17) none 0px; outline-offset: 0px; box-sizing: border-box; overflow: hidden; background-attachment: local; background-blend-mode: normal; background-clip: border-box; background-color: rgb(255, 255, 255); background-origin: padding-box; background-position: 6px 13px; background-repeat: no-repeat; background-size: auto; -webkit-background-clip: border-box; -webkit-background-origin: padding-box; font-family: &quot;Helvetica Neue&quot;, Helvetica, arial, &quot;Liberation Sans&quot;, FreeSans, sans-serif; font-kerning: auto; font-size: 12px; font-stretch: 100%; font-style: normal; font-variant: normal; font-weight: 400; text-align: start; text-align-last: auto; text-decoration: none solid rgb(17, 17, 17); text-decoration-skip: objects; text-underline-position: auto; text-indent: 0px; text-rendering: optimizeLegibility; text-shadow: none; text-size-adjust: 100%; text-transform: none; -webkit-font-smoothing: antialiased; -webkit-text-combine: none; -webkit-text-decorations-in-effect: none; -webkit-text-emphasis: none rgb(17, 17, 17); -webkit-text-emphasis-position: over right; -webkit-text-fill-color: rgb(17, 17, 17); -webkit-text-orientation: vertical-right; -webkit-text-security: none; -webkit-text-stroke: 0px rgb(17, 17, 17); text-anchor: start; color: rgb(17, 17, 17);"><div class="GINGER_SOFTWARE_richText GINGER_SOFTWARE_control" ginger_software_editor="true" dir="" style="width: 503px; top: 13px; left: 6px; box-shadow: rgb(190, 226, 255) 0px 0px 6px 0px; cursor: text; vertical-align: middle; column-rule-color: rgb(17, 17, 17); perspective-origin: 252.344px 14px; transform-origin: 252.344px 14px 0px; caret-color: rgb(17, 17, 17); line-height: normal;"></div></div></div>
+
+<!--
+    <div class="baseWrapper baseFlexbox baseFlex-column" mainWrapper>
+
+
+
+      <div class="baseFlexChild-none" notInUseTestOnly>
+        <div branding class="pa-s fs-xs bg-positive c-white" id="tmp_topinfo">
+          Just a baseFlexChild-none item - means does not stretch automatic. But will get 0 height if empty :)
+          <span class="float-right link--White" onclick="toggle_visibility('tmp_topinfo');">Check out you can close me! <span aria-hidden="true" data-icon="&#xe626;" class="iconSize--s"></span></span>
+        </div>
+      </div>
+
+      <div class="baseFlexChild-none" mainTopOne>
+        <div class="baseAnimeMe" id="tmp_mainNavWrapper" style="height: 74px;">
+
+          <div branding class="bg-gray--1 c-white pa-s">Branding</div>
+          <div topNav class="bg-link c-white pa-s">
+            Main navigation bar. With CSS transitions I'll be always smooth.
+            <span class="float-right link--White" onclick="toggle_height('tmp_mainNavWrapper');">Check out you can slide me out! <span aria-hidden="true" data-icon="&#xe605;" class="iconSize--s"></span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="baseFlexChild-none" mainTopOne id="tmp_mainSecNav">
+        <div secNav class="pa-s">sec nav</div>
+      </div>
+
+
+
+      <div class="baseFlexContent" mainContent>
+
+      </div>
+
+    </div>
+-->
+
+
+    <script>
+ $(function() {
+     $("#hook-followers-dropdown-list").hide();
+     $("#display-list-of-following-users").focusin(function() {
+         $("#hook-followers-dropdown-list").show();
+     }).focusout(function () {
+         $("#hook-followers-dropdown-list").hide();
+     });
+ });
+</script>
+
+<div class="width-30 width-33--vp-n width-100--vp-s float-right sticky-sidebar-on" style="top: 0px; position: fixed;">
+  <div class="sticky-content pl-xxl pa-0--vp-s width-30 width-33--vp-n width-100--vp-s float-right">
+    <div class="u-cf">
+      <div class="vote-buttons btnGroup float-right ml-m mb-s"><a class="btn--light btn--m btnGroup-item"><span aria-hidden="true" data-icon="" class="iconSize--s mr-7 c-positive"></span><span class="mr-s display-none">Approve</span><div class="btn-counter c-white bg-positive">+3</div></a>
+        <a class="btn--light btn--m btnGroup-item"><span aria-hidden="true" data-icon="" class="iconSize--s mr-7 c-negative"></span><span class="mr-s display-none">Disapprove</span>
+          <div class="btn-counter c-white bg-negative">0</div>
+        </a>
+      </div>
+      <div class="float-right mb-s"><a class="btn--m btn--simple">Ignore</a><a class="btn--m btn--positive">Merge</a></div>
+      <div class="float-right"><a class="btn--m btn--simple" title="Edit merge request"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><!-- react-text: 74 -->Edit<!-- /react-text --></a></div>
+    </div>
+    <div class="u-cf mb-m">
+      <div class="mt-m">
+        <div class="u-cf mb-m position-relative">
+          <h3 class="fw-6 mb-m">Followers</h3>
+          <ul>
+            <li class="pa-0 mb-s pr-m ls-none fs-xs lh-xxs hover--display position-relative">
+              <a aria-hidden="true" data-icon="" class="iconSize--xs link--lighterToLight u-pinTR cursor-pointer" title="Remove this follower"></a>
+              <a href="javascript: void(0);" class="mr-s js-modalTrigger"><img src="./New main structure_1_files/aHAur6WCir4l0leJe5cbLr_1422031052_small" width="18px" height="18px" class="br-s"><span class="ml-s va-top">skolotinskiy</span></a>
+            </li>
+            <li class="pa-0 mb-s pr-m ls-none fs-xs lh-xxs hover--display position-relative">
+              <a aria-hidden="true" data-icon="" class="iconSize--xs link--lighterToLight u-pinTR cursor-pointer" title="Remove this follower"></a>
+              <a href="javascript: void(0);" class="mr-s js-modalTrigger"><img src="./New main structure_1_files/azc2fw0uWr4zsKacwqjQXA_1422057305_small" width="18px" height="18px" class="br-s"><span class="ml-s va-top">Mr.Jenkins</span></a>
+            </li>
+            <li class="pa-0 mb-s pr-m ls-none fs-xs lh-xxs hover--display position-relative">
+              <a aria-hidden="true" data-icon="" class="iconSize--xs link--lighterToLight u-pinTR cursor-pointer" title="Remove this follower"></a>
+              <a href="javascript: void(0);" class="mr-s js-modalTrigger"><img src="./New main structure_1_files/cq3fSICkar5kddacwqEsg8_1484670606_small" width="18px" height="18px" class="br-s"><span class="ml-s va-top">artur.kremens</span></a>
+            </li>
+            <li class="pa-0 mb-s pr-m ls-none fs-xs lh-xxs hover--display position-relative">
+              <a href="javascript: void(0);" class="mr-s js-modalTrigger"><img src="./New main structure_1_files/d3hu0yLear5Ooidmr6CpXy_1477553364_small" width="18px" height="18px" class="br-s"><span class="ml-s va-top">jakub89119</span></a>
+            </li>
+          </ul>
+          <div>
+            <div class="u-cf mt-s mb-sm"><a class="btn--s btn--light">Add follower</a></div>
+            <div class="position-relative mb-s">
+              <input type="text" id="display-list-of-following-users" class="input--s width-100 pr-l GINGER_SOFTWARE_control" placeholder="Add follower" style="font-size: 12px; background-repeat: no-repeat !important; background-attachment: local !important; background-position: 6px 13px !important; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfcAAAAaCAYAAACq2BXPAAABLklEQVR4Xu3VAQ0AAAgCQelf2h6/swGHGztHgAABAgQIpASWSiMMAQIECBAgcMbdExAgQIAAgZiAcY8VKg4BAgQIEDDufoAAAQIECMQEjHusUHEIECBAgIBx9wMECBAgQCAmYNxjhYpDgAABAgSMux8gQIAAAQIxAeMeK1QcAgQIECBg3P0AAQIECBCICRj3WKHiECBAgAAB4+4HCBAgQIBATMC4xwoVhwABAgQIGHc/QIAAAQIEYgLGPVaoOAQIECBAwLj7AQIECBAgEBMw7rFCxSFAgAABAsbdDxAgQIAAgZiAcY8VKg4BAgQIEDDufoAAAQIECMQEjHusUHEIECBAgIBx9wMECBAgQCAmYNxjhYpDgAABAgSMux8gQIAAAQIxAeMeK1QcAgQIECDwlRoAG0dhkn0AAAAASUVORK5CYII=&quot;) !important; position: relative; white-space: pre-wrap;" spellcheck="false" ginger_software_editor="true">
+              <div id="hook-followers-dropdown-list" class="searchable-field u-unpinTop u-unpinLeft" style="z-index: 3; display: none;">
+                <div class="searchable-field-context">
+                  <ul class="ls-none td-none m-0">
+                    <li class="pr-l pl-sm ptb-5 position-relative td-noneAll u-cf">
+                      <span class="fw-6 c-gray--2 fs-xxs">Space members</span>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/ae6wDGXB8r5Pj4acwqjQXA_1486153750_small" alt="Aleksandra_Ozdoba" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">(me) Aleksandra_Ozdoba</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">Aleksandra_Ozdoba</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/7-855661baddb92d28e9bfc7609d6b377d.png" alt="(alexandra@gmail.com)" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">alexandra@gmail.com</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">Pending</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/8-6a3682b049e7c54127bfc0a153ff3a22.png" alt="Amanda Pinchbeck" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Amanda Pinchbeck</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">amandap</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/dwrwWMOm0r3iyDabIlDkbG_1422169959_small" alt="Andrei Cuşnir" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Andrei Cuşnir</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">andrei</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><span class="user-checked u-pinTop--50 mnt-s pt-1 c-gray--2 mr-s position-absolute iconSize--s u-pinRight" aria-hidden="true" data-icon=""></span><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/cq3fSICkar5kddacwqEsg8_1484670606_small" alt="Artur Kremens" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Artur Kremens</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">artur.kremens</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/7-855661baddb92d28e9bfc7609d6b377d.png" alt="(bartlomiej_skrzyczek)" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">bartlomiej_skrzyczek</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">bartlomiej_skrzyczek</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><span class="user-checked u-pinTop--50 mnt-s pt-1 c-gray--2 mr-s position-absolute iconSize--s u-pinRight" aria-hidden="true" data-icon=""></span><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/d3hu0yLear5Ooidmr6CpXy_1477553364_small" alt="Jakub Mikrut" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Jakub Mikrut</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">jakub89119</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/azc2fw0uWr4zsKacwqjQXA_1422057305_small" alt="Mr. Andrew Jenkins" width="26px" height="26px">
+                      <span class="user-checked u-pinTop--50 mnt-s pt-1 c-gray--2 mr-s position-absolute iconSize--s u-pinRight" aria-hidden="true" data-icon=""></span>
+                      <div class="searchable-name u-truncateText">Mr. Andrew Jenkins</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">Mr.Jenkins</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><span class="user-checked u-pinTop--50 mnt-s pt-1 c-gray--2 mr-s position-absolute iconSize--s u-pinRight" aria-hidden="true" data-icon=""></span><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/aHAur6WCir4l0leJe5cbLr_1422031052_small" alt="Stanislav Kolotinskiy" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Stanislav Kolotinskiy</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">skolotinskiy</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 position-relative td-noneAll u-cf">
+                      <span class="fw-6 c-gray--2 fs-xxs">Portfolio members</span>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/cFNzvwvdSr5OWzacwqEsg8_1486673692_small" alt="angela.bartels" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">angela.bartels</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">angela.bartels</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/5-0123c7bbf16ef8c49a3c581106f73a7e.png" alt="Bartosz Perlak" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Bartosz Perlak</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">bartoszperlak</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/cS_mdoPrer5OZcdmr6bg7m_1478541080_small" alt="Christine Cremonni" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Christine Cremonni</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">ccremonni</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/11-356867cc35912a8b334bf2c099408ccf.png" alt="Chrissie16" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Chrissie16</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">Chrissie16</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/bTVhveczer5ikWdmr6bg7m_1422075782_small" alt="Damian Szymański" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Damian Szymański</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">damianszymanski</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/c_EC3K0DCr5RyUdmr6QqzO_1483476713_small" alt="David Romoff" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">David Romoff</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">david</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/b03ab26a6f224af7b8b4b9368698f98d.png" alt="Ed Byrne" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Ed Byrne</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">EdByrne210</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/bTyJAAy4Cr5OkmacwqEsg8_1471372240_small" alt="Gabriela Fijalkowska" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Gabriela Fijalkowska</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">gabi-fijalkowska</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/dBf2nmnnir5RZcdmr6CpXy_1466199370_small" alt="gravitational" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">gravitational</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">gravitational</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/a4JSdcHcmr36NOeJe5cbCb_1422023584_small" alt="Ghulam Shabbir" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Ghulam Shabbir</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">gshabbir</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/a4i1R-eTGr5POrdmr6QqzO_1489604707_small" alt="Jacek Materna" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Jacek Materna</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">jacek.materna</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/8-6a3682b049e7c54127bfc0a153ff3a22.png" alt="Jakub Bajorek" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Jakub Bajorek</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">jakub.bajorek</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/12-411b0a47c6e7511fbd678d50e77b7c1a.png" alt="Jess Garza" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Jess Garza</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">jessgarza</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/5-0123c7bbf16ef8c49a3c581106f73a7e(1).png" alt="jheeschen" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">jheeschen</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">jheeschen</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/cd0rEG8Rqr5ytdacwqEsg8_1478213938_small" alt="John Dimou" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">John Dimou</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">Johndimou</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/cThYs6stir5RddacwqEsg8_1468521113_small" alt="jonathan stovall" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">jonathan stovall</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">jonstovall</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/bzBSwWtb4r573cacwqjQXA_1497257427_small" alt="Julian Foad" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Julian Foad</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">julianfoad</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/dAiMh02ver5lZdacwqjQYw_1464170510_small" alt="Marcin Ksiazkiewicz" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Marcin Ksiazkiewicz</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">kolorowestudio</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/8-6a3682b049e7c54127bfc0a153ff3a22(1).png" alt="Konrad Zuwała" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Konrad Zuwała</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">konrad.zuwala</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/d6FAG-4Aqr5Okcdmr6CpXy_1490028345_small" alt="Laith Dahiyat" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Laith Dahiyat</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">laithd</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/8-6a3682b049e7c54127bfc0a153ff3a22(2).png" alt="Michelle Marek" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Michelle Marek</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">michelle.marek</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/axqpkwcbur54kSdmr6CpXy_1490046813_small" alt="Matthew Theiss" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Matthew Theiss</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">mtheiss</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/c85f-412ur35WReJe5cbLA_1431738140_small" alt="Sergey Nazarov" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Sergey Nazarov</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">natarajaya</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/bZZFQkb_mr55qaacwqjQXA_1501169563_small" alt="Nick Honegger" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Nick Honegger</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">nickhonegger</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/5-0123c7bbf16ef8c49a3c581106f73a7e.png" alt="paullynch" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">paullynch</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">paullynch</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/cR-zrawPOr5l7cacwqjQWU_1473885258_small" alt="Pavel Dotsulenko" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Pavel Dotsulenko</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">pavel.d</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/dq1A0-6fer5OoNacwqjQYw_1488403928_small" alt="Przemysław Łukasik" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Przemysław Łukasik</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">plukasik</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/3-0879b3fae9f60d6eebf75877973523dc.png" alt="Ruben Dominguez" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Ruben Dominguez</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">rubdom</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/aOCZ9wudyr57Kxdmr6CpXy_1501787313_small" alt="Sarah Cantu" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Sarah Cantu</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">sarahcantu</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/acmTsONqyr4lOQeJe4gwI3_1463693696_small" alt="Sergiy Golub" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Sergiy Golub</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">sergiy_golub</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/9-3762a8f68b37c1227b069de0017dd43f.png" alt="Todd Morey" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Todd Morey</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">toddmorey</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/aLhmG8-8Wr4j6uacwqjQWU_1422033761_small" alt="Vadim Todorov" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Vadim Todorov</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">tofir</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/aIING2b5Sr4QIXacwqjQWU_1422031712_small" alt="Toshi Dávila Chinen" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Toshi Dávila Chinen</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">Toshidavila</div>
+                    </li>
+                    <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf"><img class="float-left mt-3 mr-s br-m" src="./New main structure_1_files/cyjATCfOWr5OosacwqjQYw_1485178979_small" alt="Wojciech Lazar" width="26px" height="26px">
+                      <div class="searchable-name u-truncateText">Wojciech Lazar</div>
+                      <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">wlojtek</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bt-1 bc-gray--4">
+                  <a href="javascript: void(0);" class="float-left pa-s fs-xxs">Invite new user</a>
+                  <a class="float-right pa-s fs-xxs" href="http://breakout.tld:3000/styleguide/drafts/draft_quick_invite_general_view_follow_mr.html" target="_blank">Manage users</a>
+                </div>
+              </div>
+              <div class="u-cf position-relative fs-xs lh-xxs">
+                <ul class="ui-autocomplete auto-list u-maxWidth--100"></ul>
+              </div>
+              <a aria-hidden="true" data-icon="" class="iconSize--s u-pinTR mt-5 mr-5 c-gray--3 iconSize--s  u-pinTR mt-5 mr-5"></a>
+            </div>
+          </div>
+        </div>
+        <div class="u-cf mb-m position-relative">
+          <h3 class="fw-6 mb-m">Affected tickets</h3>
+          <ul>
+            <li class="pa-0 mb-s pr-m ls-none fs-xs lh-xxs hover--display position-relative">
+              <a aria-hidden="true" data-icon="" class="iconSize--xs link--lighterToLight u-pinTR cursor-pointer" title="Remove this ticket"></a>
+              <a href="http://breakout.tld:3000/spaces/breakout/tickets/36163-vip-client-component-field-value-is-missing-on-the-rtl">
+                <div class="fs-xxs lh-xs plr-4 mr-5 bg-gray--4 c-gray--1 br-m td-none ws-nowrap display-inlineBlock">
+                  <!-- react-text: 110 -->#
+                  <!-- /react-text -->
+                  <!-- react-text: 111 -->36163
+                  <!-- /react-text -->
+                </div>
+                <!-- react-text: 112 -->VIP Client Component field value is missing on the RTL
+                <!-- /react-text -->
+              </a>
+            </li>
+          </ul>
+          <div>
+            <div class="u-cf mt-s mb-sm"><a class="btn--s btn--light">Add ticket</a></div>
+            <!-- react-empty: 116 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script id="wappalyzer" src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/inject.js"></script><iframe width="0" height="0" frameborder="0" src="./New main structure_1_files/saved_resource.html" style="border: 0px solid; display: none; position: absolute; z-index: 2147483647; height: 0px; width: 0px; background-color: transparent;" id="GINGER_SOFTWARE_bubblesIFrame" scrolling="no"></iframe><div id="GingerWidgetInfo" style="display:none;">{"version":"0.1.0.627","isExtension":true,"extensionName":"Chrome"}</div></body><script>(function(){(function (){
+            //Todo:is injection needed here?
+            var eventRegister = {};
+
+            var findReactProp = function(elem){
+                for(var key in elem){
+                    if(key.indexOf("__reactInternalInstance")===0){
+                        //var p = null;
+                        //if(elem[key].memoizedProps){
+                        //    p = elem[key].memoizedProps;
+                        //} else if(elem[key]._currentElement){
+                        //    p = elem[key]._currentElement.props
+                        //}
+
+                        //TODO: report if props is not found with Facebook version
+                        return (elem[key].memoizedProps || elem[key]._currentElement.props);
+                    }
+                }
+                return null;
+            };
+
+            document.addEventListener("gingerModule-eventEmitter-react-fire",function(e){
+                //console.log("firing", e);
+                var reactProps = findReactProp(document.activeElement);
+                var eventName = e.detail.event;
+                var eventParams = e.detail.params || {};
+                eventParams.preventDefault = function(){};
+                if(reactProps && eventName) {
+                    reactProps[eventName](eventParams);
+                }
+            });
+            document.addEventListener("gingerModule-eventEmitter-onselect",function(e){
+                var reactProps = findReactProp(document.activeElement);
+                //trigger("select");
+                if(reactProps) {
+                    reactProps.onSelect();
+                }
+            });
+            document.addEventListener("gingerModule-eventEmitter-onpaste",function(e){
+                var reactProps = findReactProp(document.activeElement);
+                var pasteObj = {
+                    defaultPrevented: false,
+                    target: document.activeElement,
+                    preventDefault: function() {},
+                    clipboardData : {
+                        getData: function () {
+                            return e.detail || "";
+                        },
+                        items: ["text/plain"]
+                    }
+                };
+                //trigger("paste",pasteObj);
+                if(reactProps) {
+                    reactProps.onPaste(pasteObj);
+                }
+            });
+
+            var trigger = function(eventName,data){
+                if(!eventRegister[eventName]) return;
+                for(var i = 0; i<eventRegister[eventName].length; i++){
+                    var listener = eventRegister[eventName][i];
+                    listener(new CustomEvent(eventName),data);
+                }
+            };
+
+            var nativeEventListener = document.addEventListener.bind(document);
+            document.addEventListener = function(eventName, callback, options) {
+                console.log("registering event",eventName);
+                var eventRegisterItem = eventRegister[eventName] || [];
+                eventRegisterItem.push(callback);
+                eventRegister[eventName] = eventRegisterItem;
+                nativeEventListener(eventName, callback, options);
+            };
+
+        })() })()</script></html>

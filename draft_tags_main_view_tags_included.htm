@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)http://breakout.tld:3000/styleguide/drafts/draft_tags_main_view_tags_included.html -->
+<html lang="en" class="toolbarActive edit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>New main structure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./New main structure_05_files/jquery.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" media="all" href="./New main structure_files/v4_structure.css">
+    <link rel="stylesheet" media="all" href="./New main structure_files/v4.css">
+    <link rel="stylesheet" media="all" href="./New main structure_files/v4-global.css">
+    <script type="text/javascript">
+    <!--
+
+        $(window).on('mousewheel DOMMouseScroll', function (e) {
+
+            var direction = (function () {
+
+                var delta = (e.type === 'DOMMouseScroll' ?
+                             e.originalEvent.detail * -40 :
+                             e.originalEvent.wheelDelta);
+
+                return delta > 0 ? 0 : 1;
+            }());
+
+            if(direction === 1) {
+               $('#mainTopOne').height(0);
+            }
+            if(direction === 0) {
+               $('#mainTopOne').height(30);
+            }
+        });
+
+        function toggle_visibility(id) {
+           var e = document.getElementById(id);
+           if(e.style.display == 'none')
+              e.style.display = 'block';
+           else
+              e.style.display = 'none';
+        }
+
+        function toggle_height(id) {
+           var e = document.getElementById(id);
+           e.style.height = '0';
+        }
+
+    //-->
+    </script>
+
+  <style type="text/css" id="GINGER_SOFTWARE_style">.GINGER_SOFTWARE_noMark { background : transparent; }  .GINGER_SOFTWARE_wrapper{ position: absolute; overflow: hidden; margin: 0px; padding: 0px; border: 0px solid transparent } .GINGER_SOFTWARE_contour { position : absolute; margin: 0px; }  .GINGER_SOFTWARE_richText { margin : 0px; padding-bottom: 3px; border-width: 0px; border-color: transparent; display: block; color: transparent; -webkit-text-fill-color: transparent; overflow: hidden; white-space: pre-wrap;}  .GINGER_SOFTWARE_inputWrapper .GINGER_SOFTWARE_richText {position: absolute;}  .GINGER_SOFTWARE_canvas { display:none; background-repeat:no-repeat;}  .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark {border-top-left-radius:2px; border-top-right-radius:2px; border-bottom-right-radius:2px; border-bottom-left-radius:2px;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark {background-image:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQ0Y2OENGMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQ0Y2OEQwMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEVDRjY4Q0QzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEVDRjY4Q0UzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5RRxRxAAAAD0lEQVR42mK48+w7QIABAAVbAroowN08AAAAAElFTkSuQmCC)!important;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark.GINGER_SOFTWARE_synonym {background-image:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfACAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH/w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBblCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKBNA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7iJIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAAXkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRByAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRRIkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQcrQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXACTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPENyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJAcaT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgXaPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZD5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2epO6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2qqaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6feeb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYPjGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFostqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuutm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPjthPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofcn8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw33jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgqTXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWFfevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaql+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRSj9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtbYlu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L158Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89HcR/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfyl5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz/GMzLdsAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAABJJREFUeNpi+P9gEwAAAP//AwAFcwKS3d7BnwAAAABJRU5ErkJggg==)!important;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark.GINGER_SOFTWARE_noSuggestion {background-image:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQ0Y2OENGMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQ0Y2OEQwMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEVDRjY4Q0QzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEVDRjY4Q0UzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5RRxRxAAAAD0lEQVR42mK48+w7QIABAAVbAroowN08AAAAAElFTkSuQmCC)!important;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_mark {position:relative; background-image:none!important;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightLeft { position : absolute; left:-2px; top:0px; bottom:0px; width:2px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightRight { position : absolute; right:-2px; top:0px; bottom:0px; width:2px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightTop { position : absolute; left:0px; right:0px; top:-2px; height:3px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightBottom { position : absolute; left:0px; right:0px; bottom:-2px; height:3px;}</style></head>
+
+  <!--
+  IMPORTANT ! ==================================
+  flex items can not be seperated by any wrapper
+  ==============================================
+  -->
+
+  <body class="" basecontrol="" ginger_software_stylesheet="true" ginger_software_doc="true">
+
+<!--
+    <div class="baseWrapper baseFlexbox baseFlex-column" mainWrapper>
+
+
+
+      <div class="baseFlexChild-none" notInUseTestOnly>
+        <div branding class="pa-s fs-xs bg-positive c-white" id="tmp_topinfo">
+          Just a baseFlexChild-none item - means does not stretch automatic. But will get 0 height if empty :)
+          <span class="float-right link--White" onclick="toggle_visibility('tmp_topinfo');">Check out you can close me! <span aria-hidden="true" data-icon="&#xe626;" class="iconSize--s"></span></span>
+        </div>
+      </div>
+
+      <div class="baseFlexChild-none" mainTopOne>
+        <div class="baseAnimeMe" id="tmp_mainNavWrapper" style="height: 74px;">
+
+          <div branding class="bg-gray--1 c-white pa-s">Branding</div>
+          <div topNav class="bg-link c-white pa-s">
+            Main navigation bar. With CSS transitions I'll be always smooth.
+            <span class="float-right link--White" onclick="toggle_height('tmp_mainNavWrapper');">Check out you can slide me out! <span aria-hidden="true" data-icon="&#xe605;" class="iconSize--s"></span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="baseFlexChild-none" mainTopOne id="tmp_mainSecNav">
+        <div secNav class="pa-s">sec nav</div>
+      </div>
+
+
+
+      <div class="baseFlexContent" mainContent>
+
+      </div>
+
+    </div>
+-->
+
+
+    <section class="plr-l ptb-m u-cf">
+  <div class="v4-ticket-details u-cf">
+    <div class="u-row mnlr-m">
+      <div class="plr-m width-30 width-33--vp-n width-100--vp-s fs-xs lh-xxs" style="display: block;">
+        <div class="float-right ws-nowrap"><span class=" c-rose"><span aria-hidden="true" data-icon="" class="iconSize--sm va-baseline"></span></span><strong class="fw-6 fs-l lh-l ml-5"><!-- react-text: 9 -->#<!-- /react-text --><!-- react-text: 10 -->35193<!-- /react-text --></strong></div>
+        <div class="u-cf">
+          <div class="float-left mb-5 mnl-5"><a class="btn--s btn--simple" title="Edit this ticket" href="javascript: void(0);" rel="nofollow" id="edit-ticket"><span class="iconSize--s mr-5" data-icon=""></span><!-- react-text: 389 -->Edit<!-- /react-text --></a><a class="btn--s btn--simple" title="Clone and create new ticket" href="http://breakout.tld:3000/spaces/breakout/tickets/new?clone_from=35193" rel="nofollow" id="clone-ticket-button"><span class="iconSize--s mr-5" data-icon=""></span><!-- react-text: 392 -->Clone<!-- /react-text --></a></div>
+      </div>
+      <div class="u-cf mb-l">
+        <ul class="ticket-fields m-0 edit-in-place-feature fields-box">
+          <li class="is-readonly created_on fields-item">
+            <div class="fields-item-label">
+              <!-- react-text: 1236 -->Created on
+              <!-- /react-text -->
+              <!-- react-text: 1237 -->&nbsp;
+              <!-- /react-text -->
+            </div>
+            <div class="fields-item-value" id="field-item-created_on"><span class="fw-6">2017-03-30 11:50</span></div>
+          </li>
+          <li class="is-readonly reporter_id fields-item">
+            <div class="fields-item-label">
+              <!-- react-text: 1242 -->Reported by
+              <!-- /react-text -->
+              <!-- react-text: 1243 -->&nbsp;
+              <!-- /react-text -->
+            </div>
+            <div class="fields-item-value" id="field-item-reporter_id"><span class="fw-6"><div class="inside-clickable"><span class="inside-clickable">Marcin Ksiazkiewicz</span>
+              <a class="pl-5 link--toLighter iconSize--xxs js-modalTrigger" href="http://breakout.tld:3000/user/popup_profile/kolorowestudio" title="Click to view the user profile" data-icon="" target="_blank"></a>
+            </div>
+            </span>
+      </div>
+      </li>
+      <li class="editable ticket_status_id fields-item">
+        <div class="fields-item-label">
+          <!-- react-text: 1251 -->Status
+          <!-- /react-text -->
+          <!-- react-text: 1252 -->&nbsp;
+          <!-- /react-text -->
+        </div>
+        <div title="Click to edit" class="fields-item-value" id="field-item-ticket_status_id"><span class="fw-6">In-Progress</span></div>
+      </li>
+      <li class="editable priority fields-item">
+        <div class="fields-item-label">
+          <!-- react-text: 1257 -->Priority
+          <!-- /react-text -->
+          <!-- react-text: 1258 -->&nbsp;
+          <!-- /react-text -->
+        </div>
+        <div title="Click to edit" class="fields-item-value" id="field-item-priority"><span class="fw-6">Normal (3)</span></div>
+      </li>
+      <li class="editable assigned_to_id fields-item">
+        <div class="fields-item-label">
+          <!-- react-text: 1263 -->Assigned to
+          <!-- /react-text -->
+          <!-- react-text: 1264 -->&nbsp;
+          <!-- /react-text -->
+        </div>
+        <div class="fields-item-value fields-item-user-value" id="field-item-assigned_to_id" title="Click to edit"><span class="fw-6"><div class="inside-clickable"><span class="inside-clickable">me (bartlomiej_skrzyczek)</span>
+          <a class="pl-5 link--toLighter iconSize--xxs js-modalTrigger" href="http://breakout.tld:3000/user/popup_profile/bartlomiej_skrzyczek" title="Click to view the user profile" data-icon="" target="_blank"></a>
+        </div>
+        </span>
+    </div>
+    </li>
+    <li class="editable custom_fields_406713 fields-item">
+      <div class="fields-item-label">
+        <!-- react-text: 1272 -->Component
+        <!-- /react-text -->
+        <!-- react-text: 1273 -->&nbsp;
+        <!-- /react-text -->
+      </div>
+      <div title="Click to edit" class="fields-item-value" id="field-item-custom_fields_406713"><span class="fw-6">-</span></div>
+    </li>
+    <li class="editable milestone_id fields-item">
+      <div class="fields-item-label">
+        <!-- react-text: 1278 -->Milestone
+        <!-- /react-text -->
+        <!-- react-text: 1279 -->&nbsp;
+        <!-- /react-text -->
+      </div>
+      <div title="Click to edit" class="fields-item-value" id="field-item-milestone_id"><span class="fw-6"><div class=""><span class="">Current Tasks</span>
+        <a class="pl-5 link--toLighter iconSize--xxs js-modalTrigger" href="http://breakout.tld:3000/spaces/breakout/milestones/756103-current-tasks" title="Click to view the milestone" data-icon="" target="_blank"></a>
+      </div>
+      </span>
+  </div>
+  </li>
+  <li class="editable hierarchy_type fields-item">
+    <div class="fields-item-label">
+      <!-- react-text: 1287 -->Plan Level
+      <!-- /react-text -->
+      <!-- react-text: 1288 -->&nbsp;
+      <!-- /react-text -->
+    </div>
+    <div title="Click to edit" class="fields-item-value" id="field-item-hierarchy_type"><span class="fw-6">-</span></div>
+  </li>
+  <li class="editable due_date fields-item">
+    <div class="fields-item-label">
+      <!-- react-text: 1293 -->Due Date
+      <!-- /react-text -->
+      <!-- react-text: 1294 -->&nbsp;
+      <!-- /react-text -->
+    </div>
+    <div title="Click to edit" class="fields-item-value" id="field-item-due_date"><span class="fw-6">-</span></div>
+  </li>
+  <li class="editable custom_fields_368733 fields-item">
+    <div class="fields-item-label">
+      <!-- react-text: 1299 -->ReviewedOn
+      <!-- /react-text -->
+      <!-- react-text: 1300 -->&nbsp;
+      <!-- /react-text -->
+    </div>
+    <div title="Click to edit" class="fields-item-value" id="field-item-custom_fields_368733"><span class="fw-6">-</span></div>
+  </li>
+  <li class="editable custom_fields_361463 fields-item">
+    <div class="fields-item-label">
+      <!-- react-text: 1305 -->TestedOn
+      <!-- /react-text -->
+      <!-- react-text: 1306 -->&nbsp;
+      <!-- /react-text -->
+    </div>
+    <div title="Click to edit" class="fields-item-value" id="field-item-custom_fields_361463"><span class="fw-6">-</span></div>
+  </li>
+  <li class="editable custom_fields_7527 fields-item">
+    <div class="fields-item-label">
+      <!-- react-text: 1311 -->Tester
+      <!-- /react-text -->
+      <!-- react-text: 1312 -->&nbsp;
+      <!-- /react-text -->
+    </div>
+    <div title="Click to edit" class="fields-item-value" id="field-item-custom_fields_7527"><span class="fw-6">-</span></div>
+  </li>
+  <li class="editable custom_fields_39322 fields-item">
+    <div class="fields-item-label">
+      <!-- react-text: 1317 -->Type
+      <!-- /react-text -->
+      <!-- react-text: 1318 -->&nbsp;
+      <!-- /react-text --><span class="req hidden u-hidden">*</span></div>
+    <div title="Click to edit" class="fields-item-value" id="field-item-custom_fields_39322"><span class="fw-6">Improvement</span></div>
+  </li>
+  <li class="editable tag_names fields-item">
+    <div class="fields-item-label">
+      <!-- react-text: 1324 -->Tags
+      <!-- /react-text -->
+      <!-- react-text: 1325 -->&nbsp;
+      <!-- /react-text -->
+    </div>
+    <div class="fields-item-value" id="field-item-tag_names" style="overflow:visible">
+      <span class="fw-6">
+        <span>
+          <span class="tag tag-bgColor-1 mr-3 is-selected"><!-- react-text: 1334 -->Api<!-- /react-text --><span aria-hidden="true" data-icon="" class="display-inlineBlock link--grayToBg iconSize--xxs lh-xxxs ml-5 mnr-3 plr-2 br-s"></span>
+          </span>
+          <span class="tag tag-bgColor-2 mr-3 is-selected"><!-- react-text: 1330 -->ProfitTeam<!-- /react-text --><span aria-hidden="true" data-icon="" class="display-inlineBlock link--grayToBg iconSize--xxs lh-xxxs ml-5 mnr-3 plr-2 br-s"></span>
+        </span>
+          <span class="tag tag-bgColor-3 mr-3 is-selected"><!-- react-text: 1332 -->Roadmap<!-- /react-text --><span aria-hidden="true" data-icon="" class="display-inlineBlock link--grayToBg iconSize--xxs lh-xxxs ml-5 mnr-3 plr-2 br-s"></span></span>
+          <span class="tag tag-bgColor-4 mr-3 is-selected"><!-- react-text: 1334 -->UX<!-- /react-text --><span aria-hidden="true" title="" data-icon="" class="display-inlineBlock link--grayToBg iconSize--xxs lh-xxxs ml-5 mnr-3 plr-2 br-s"></span></span>
+        </span>
+      </span>
+
+        <div class="searchable-field bg-white ba-1 br-m bc-gray--4 boxShadow-dark fs-xs lh-xxs fw-4 position-absolute">
+          <div class="u-cf bb-1 bc-gray--5 fs-xxs lh-l">
+            <div class="fw-6">
+              <span class="pl-sm">Edit tags</span>
+              <span aria-hidden="true" data-icon="" class="link--light bg-onHover--5 iconSize--s float-right plr-sm"></span>
+            </div>
+          </div>
+          <div class="ptb-s plr-s position-relative bb-1 bc-gray--4">
+            <input type="text" placeholder="Filter or create a new tag" class="input--s width-100">
+          </div>
+          <div class="searchable-field-context">
+            <ul class="ls-none td-none">
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-1 pa-5 pl-s pr-l mr-l">
+                  Api
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter iconSize--xs mr-s u-pinRight"></span>
+                </div>
+              </li>
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-2 pa-5 pl-s mr-l">
+                  Architecture
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter u-pinTop--50 iconSize--xs mr-s u-pinRight display-none"></span>
+                </div>
+              </li>
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-1 pa-5 pl-s mr-l">
+                  Basics
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter iconSize--xs mr-s u-pinRight display-none"></span>
+                </div>
+              </li>
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-3 pa-5 pl-s mr-l">
+                  Database
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter iconSize--xs mr-s u-pinRight display-none"></span>
+                </div>
+              </li>
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-4 pa-5 pl-s mr-l">
+                  Evolution
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter iconSize--xs mr-s u-pinRight display-none"></span>
+                </div>
+              </li>
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-5 pa-5 pl-s mr-l">
+                  HR
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter iconSize--xs mr-s u-pinRight display-none"></span>
+                </div>
+              </li>
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-6 pa-5 pl-s mr-l">
+                  Interface
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter iconSize--xs mr-s u-pinRight display-none"></span>
+                </div>
+              </li>
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-2 pa-5 pl-s mr-l">
+                  Koala
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter iconSize--xs mr-s u-pinRight display-none"></span>
+                </div>
+              </li>
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-3 pa-5 pl-s mr-l">
+                  lenovo
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter iconSize--xs mr-s u-pinRight display-none"></span>
+                </div>
+              </li>
+              <li class="plr-s ptb-5 cursor-pointer bg-onHover--5 position-relative td-noneAll u-cf">
+                <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter plr-s u-pinRight c-gray--1 iconSize--xs mr-3 link--lighterToLight"></span>
+                <div class="position-relative wb-breakWord tag-bgColor-5 pa-5 pl-s mr-l">
+                  Manufacture
+                  <span aria-hidden="true" data-icon="" class="u-absolute-verticallyCenter iconSize--xs mr-s u-pinRight display-none"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="plr-s ptb-s bt-1 bc-gray--4">
+            <a href="http://breakout.tld:3000/styleguide/drafts/*" target="_blank">Create a new tag</a>
+          </div>
+        </div>
+
+      </div>
+    </li></ul></div>
+
+  <li class="editable visible_in_client_view fields-item">
+    <div class="fields-item-label">
+      <!-- react-text: 1337 -->Visible In Client View
+      <!-- /react-text -->
+      <!-- react-text: 1338 -->&nbsp;
+      <!-- /react-text -->
+    </div>
+    <div class="fields-item-value" id="field-item-visible_in_client_view"><span class="fw-6">Yes</span></div>
+  </li>
+
+  </div>
+  <div>
+    <div class="mb-20 mt-20 mtb-l">
+      <div>
+        <div class="u-cf mb-s">
+          <h3 class="fw-6 fs-s lh-xs float-left"><a class="link--darkToLight td-noneAll">Attachments</a></h3>
+          <a href="javascript: void(0);" class="tp-defaultAll hover-hook float-right ml-s link--lighterToLight iconSize--s" aria-hidden="true" data-icon=""></a>
+        </div>
+        <ul class="u-cf">
+          <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/ckhuUyftar560racwqjQXA/download/ckhuUyftar560racwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">blob</span></a>
+            <div class="fs-xxs lh-xxs c-gray--2">
+              <!-- react-text: 1346 -->Added by
+              <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">kolorowestudio</a>
+              <!-- react-text: 1348 -->on
+              <!-- /react-text -->
+              <!-- react-text: 1349 -->2017-03-30
+              <!-- /react-text -->
+      </div>
+      </li>
+      <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/d3RbRAh5Or56Tcdmr6CpXy/download/d3RbRAh5Or56Tcdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 5.59.30 PM.png</span></a>
+        <div class="fs-xxs lh-xxs c-gray--2">
+          <!-- react-text: 1355 -->Added by
+          <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+          <!-- react-text: 1357 -->on
+          <!-- /react-text -->
+          <!-- react-text: 1358 -->2017-04-12
+          <!-- /react-text -->
+    </div>
+    </li>
+    <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/azTunOh5Sr54kZacwqjQYw/download/azTunOh5Sr54kZacwqjQYw"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 5.59.52 PM.png</span></a>
+      <div class="fs-xxs lh-xxs c-gray--2">
+        <!-- react-text: 1364 -->Added by
+        <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+        <!-- react-text: 1366 -->on
+        <!-- /react-text -->
+        <!-- react-text: 1367 -->2017-04-12
+        <!-- /react-text -->
+  </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/a6PeNah5Sr57Vcdmr6CpXy/download/a6PeNah5Sr57Vcdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 6.00.06 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1373 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1375 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1376 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/bAXd9Ih5Sr56ldacwqjQXA/download/bAXd9Ih5Sr56ldacwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 6.03.26 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1382 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1384 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1385 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/cziNuWh5Sr54kcdmr6CpXy/download/cziNuWh5Sr54kcdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 6.03.45 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1391 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1393 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1394 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/c63CKyh5Sr54KTdmr6CpXy/download/c63CKyh5Sr54KTdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 6.06.26 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1400 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1402 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1403 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/a9ToHSh5Wr56m9dmr6bg7m/download/a9ToHSh5Wr56m9dmr6bg7m"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 6.06.44 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1409 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1411 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1412 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/cj5_PSh5Wr54k6acwqjQXA/download/cj5_PSh5Wr54k6acwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 6.11.06 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1418 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1420 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1421 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/cBFc8uh5Wr54oJdmr6QqzO/download/cBFc8uh5Wr54oJdmr6QqzO"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 6.11.18 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1427 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1429 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1430 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/cZuYqMh5Wr54kedmr6CpXy/download/cZuYqMh5Wr54kedmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 6.11.25 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1436 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1438 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1439 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/dsKunEh5Wr54Rddmr6CpXy/download/dsKunEh5Wr54Rddmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 6.11.38 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1445 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1447 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1448 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/aT16b2h6Kr57Ncdmr6QqzO/download/aT16b2h6Kr57Ncdmr6QqzO"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 7.51.53 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1454 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1456 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1457 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/biwsoSh6Kr54kNacwqEsg8/download/biwsoSh6Kr54kNacwqEsg8"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 7.52.05 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1463 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1465 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1466 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/bxDIaUh6Kr55yjacwqEsg8/download/bxDIaUh6Kr55yjacwqEsg8"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 7.52.13 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1472 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1474 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1475 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/b3BwXMh6Kr57Ncdmr6CpXy/download/b3BwXMh6Kr57Ncdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 7.52.19 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1481 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1483 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1484 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/cxq3Bah6Kr54kOacwqjQYw/download/cxq3Bah6Kr54kOacwqjQYw"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 7.52.37 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1490 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1492 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1493 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/cN6qoGh6Kr54kVacwqEsg8/download/cN6qoGh6Kr54kVacwqEsg8"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 7.52.44 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1499 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1501 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1502 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/c6h3Fuh6Kr54updmr6QqzO/download/c6h3Fuh6Kr54updmr6QqzO"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 7.52.50 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1508 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1510 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1511 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/dIQ0XAh6Kr56zIdmr6CpXy/download/dIQ0XAh6Kr56zIdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 7.52.57 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1517 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1519 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1520 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/a9dn_Sh6Or57jDacwqjQXA/download/a9dn_Sh6Or57jDacwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 8.02.33 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1526 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1528 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1529 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/dVSkv0h7ar56_cacwqjQYw/download/dVSkv0h7ar56_cacwqjQYw"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 8.50.17 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1535 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1537 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1538 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/ayOSBSh7er55OpacwqjQXA/download/ayOSBSh7er55OpacwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 8.51.31 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1544 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1546 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1547 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="http://breakout.tld:3000/spaces/breakout/documents/bjfHmAh7er56_cacwqjQYw/download/bjfHmAh7er56_cacwqjQYw"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><span class="ws-nowrap to-ellipsis of-hidden display-block">Screen Shot 2017-04-12 at 8.52.50 PM.png</span></a>
+    <div class="fs-xxs lh-xxs c-gray--2">
+      <!-- react-text: 1553 -->Added by
+      <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+      <!-- react-text: 1555 -->on
+      <!-- /react-text -->
+      <!-- react-text: 1556 -->2017-04-12
+      <!-- /react-text -->
+      </div>
+  </li>
+  </ul>
+  </div>
+  </div>
+  <div class="mb-20 mt-20 mtb-l">
+    <div>
+      <div class="u-cf mb-s">
+        <h3 class="fw-6 fs-s lh-xs float-left"><a class="link--darkToLight td-noneAll">Related Tickets</a></h3>
+        <a href="javascript: void(0);" class="tp-defaultAll hover-hook float-right ml-s link--lighterToLight iconSize--s" aria-hidden="true" data-icon=""></a>
+      </div>
+      <ul class="">
+        <li class="pa-0 mb-s pr-m ls-none fs-xs lh-xxs hover--display position-relative"><a href="http://breakout.tld:3000/spaces/webapp-roadmap/tickets/58-implement-coloring-for-tags/details"><span class="fs-xxs lh-xxs plr-4 mr-5 bg-gray--4 c-gray--1 br-m td-none float-left"><!-- react-text: 1560 -->#<!-- /react-text --><!-- react-text: 1561 -->58<!-- /react-text --></span><!-- react-text: 1562 -->Implement Coloring for Tags<!-- /react-text --></a>
+          <div class="fs-xxs lh-xxs c-gray--2"><span class="fw-6 c-positive">Related</span><span><!-- react-text: 1566 -->: <!-- /react-text --><!-- react-text: 1567 -->In Development<!-- /react-text --></span></div>
+    </li>
+    </ul><a href="http://breakout.tld:3000/spaces/breakout/tickets/new?relate_as=6&amp;ticket1_id=35193">Add new subtask or bug</a></div>
+  </div>
+  <div class="mb-20 mt-20 mtb-l">
+    <div>
+      <div class="u-cf mb-s">
+        <h3 class="fw-6 fs-s lh-xs float-left"><a class="link--darkToLight td-noneAll">Followers</a></h3>
+        <a href="javascript: void(0);" class="tp-defaultAll hover-hook float-right ml-s link--lighterToLight iconSize--s" aria-hidden="true" data-icon=""></a>
+      </div>
+      <div class="mtb-s">
+        <a href="javascript: void(0);" class="mb-10 h2-height follow-ticket" title="Click to unfollow this ticket activities">
+          <!-- react-text: 1570 -->(
+          <!-- /react-text -->
+          <!-- react-text: 1571 -->unfollow this ticket
+          <!-- /react-text -->
+          <!-- react-text: 1572 -->)
+          <!-- /react-text -->
+        </a>
+      </div>
+      <ul class="u-cf">
+        <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="javascript: void(0);" class=" js-modalTrigger"><span><img alt="User picture" src="./New main structure_05_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="16px" height="16px" class="br-s va-top mr-5"><!-- react-text: 1577 -->bartlomiej_skrzyczek<!-- /react-text --></span></a></li>
+        <li class="pa-0 mb-s pr-m ls-none hover--display position-relative"><a href="javascript: void(0);" class=" js-modalTrigger"><span><img alt="User picture" src="./New main structure_05_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="16px" height="16px" class="br-s va-top mr-5"><!-- react-text: 1582 -->Marcin Ksiazkiewicz<!-- /react-text --></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mb-20 mt-20 mtb-l">
+    <div>
+      <div>
+        <div class="u-cf mb-s">
+          <h3 class="fw-6 fs-s lh-xs float-left"><a class="link--darkToLight td-noneAll">Merge Requests</a></h3>
+          <a href="javascript: void(0);" class="tp-defaultAll hover-hook float-right ml-s link--lighterToLight iconSize--s" aria-hidden="true" data-icon=""></a>
+        </div>
+        <ul class=""></ul>
+      </div>
+    </div>
+  </div>
+  <div class="mb-20 mt-20 mtb-l">
+    <div class="mtb-l">
+      <div class="u-cf mb-s">
+        <h3 class="fw-6 fs-s lh-xs float-left"><span class="iconSize--s mr-5" aria-hidden="true" data-icon=""></span><!-- react-text: 28 -->&nbsp;GitHub Pull Requests<!-- /react-text --></h3></div>
+      <div class="u-cf mb-s">
+        <ul></ul>
+      </div>
+      <a class="btn--m btn--light"><img src="./New main structure_05_files/logo_github_mono-99fd8d969fa117efdfb46221647fe878.png" class="width-100 mtb-s mlr-5" style="max-width: 40px;"></a><span class="mr-s ml-5 link--lighterToLight zeroclipboard-left-aligned u-verticallyCenter display-inlineBlock"><a class="link--lighterToLight position-relative zeroclipboard" id="copyButton1" data-clipboard-text="re #assembla-inc/breakout/35193"><span aria-hidden="true" data-icon="" class="iconSize--s lh-xxxs va-baseline ml-2 mr-2"></span>
+      <span class="zeroclipboard-tooltip">Copied! Paste to Github pull request</span><span class="hover-tooltip">Copy Github reference</span></a>
+        </span>
+        <!-- react-empty: 38 -->
+        <!-- react-empty: 39 -->
+    </div>
+  </div>
+  <div class="mb-20 mt-20 mtb-l">
+    <div>
+      <div class="u-cf mb-s">
+        <h3 class="fw-6 fs-s lh-xs float-left"><a class="link--darkToLight td-noneAll">Time</a></h3>
+        <a href="javascript: void(0);" class="tp-defaultAll hover-hook float-right ml-s link--lighterToLight iconSize--s" aria-hidden="true" data-icon=""></a>
+      </div>
+      <ul class="">
+        <li class="pa-0 ls-none">
+          <!-- react-empty: 430 -->
+        </li>
+        <li class="pa-0 ls-none">
+          <!-- react-empty: 432 -->
+        </li>
+        <li class="pa-0 ls-none">
+          <!-- react-empty: 434 -->
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="mb-20 mt-20 mtb-l">
+    <div>
+      <div class="u-cf mb-s">
+        <h3 class="fw-6 fs-s lh-xs float-left"><a class="link--darkToLight td-noneAll">Collaboration</a></h3></div>
+      <ul class="">
+        <div>
+          <a class="btn--m btn--light" alt="Slack"><img class="mtb-2" src="./New main structure_05_files/logo_slack_mono-d40e0cfde6e746479cf34174240ab1ad.png" style="max-height: 28px;"></a>
+          <!-- react-empty: 2043 -->
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="">
+    <div class="mb-20 mt-20 mtb-l ">
+      <div class="who-is-here-section mb-m hidden-sd">
+        <div>
+          <div class="u-cf mb-s">
+            <h3 class="fw-6 fs-s lh-xs float-left"><a class="link--darkToLight td-noneAll">Who Is Online?</a></h3></div>
+          <ul class="u-cf">
+            <li class="pa-0 mb-s pr-xl ls-none hover--display position-relative"><a href="javascript: void(0);" class="display-block ws-nowrap of-hidden to-ellipsis  js-modalTrigger"><span><img alt="User picture" src="./New main structure_05_files/7-1fbb97d7c440c8894d25f3af8b009c3f(1).png" width="16px" height="16px" class="br-s va-top mr-5"><!-- react-text: 2048 -->bartlomiej_skrzyczek<!-- /react-text --></span></a>
+              <div class="u-pinTR"><span aria-hidden="true" data-icon="" class="iconSize--xxs ml-5 c-positive"></span></div>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="plr-m width-70 width-66--vp-n width-100--vp-s">
+    <div class="u-cf mb-s" name="top">
+      <div class="position-relative hover--appear">
+        <h1 class="fs-xl lh-l fw-6 display-inline wb-breakWord"><!-- react-text: 49 -->[Tags] Improve ticket tag component UX, add tags colorization. <!-- /react-text --><a class="link--lighterToLight position-relative zeroclipboard" id="copyButton2" data-clipboard-text="#35193 - [Tags] Improve ticket tag component UX, add tags colorization. "><span aria-hidden="true" data-icon="" class="pl-xs mr-s mt-2 link--lighterToLight position-absolute iconSize--xs va-baseline display-inline"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy to clipboard</span></a><a href="javascript: void(0);" class="u-pinTL mt-4 mnl-l link--toLighter pa-5 br-m hover-hook tp-defaultAll" title="Edit title"><span aria-hidden="true" data-icon="" class="iconSize--s lh-xxxs va-baseline"></span></a></h1></div>
+    </div>
+    <div class="activity clear-float">
+      <div>
+        <div>
+          <div class="u-cf position-relative mb-l hover--appear">
+            <div class="bodyCopy--s">- improve UI/UX of the tag selection component
+              <br>- allow tag colorization
+              <br>
+              <br>This is requested improvement, and pretty light to implement.
+              <br>
+              <br><img src="./New main structure_05_files/ckhuUyftar560racwqjQXA" alt="blob">
+              <br>
+              <br>cc <a href="http://breakout.tld:3000/profile/laithd">@laithd</a> <a href="http://breakout.tld:3000/profile/sergiy_golub">@sergiy_golub</a> </div><a href="javascript: void(0);" class="u-pinTL mnl-l link--toLighter pa-5 br-m hover-hook tp-defaultAll" title="Edit description"><span aria-hidden="true" data-icon="" class="iconSize--s lh-xxxs va-baseline"></span></a></div>
+          <div>
+            <div id="ticket_tabs" class="u-cf mb-m">
+              <div class="u-tabs">
+                <ul class="tabs-list">
+                  <li id="tab-activity" class="tabs-item"><a href="javascript: void(0);" class="tabs-item-link"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 70 --> <!-- /react-text --><!-- react-text: 71 -->Activity<!-- /react-text --></span></a></li>
+                  <li id="tab-attachments" class="tabs-item"><a href="javascript: void(0);" class="tabs-item-link"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 447 --> <!-- /react-text --><!-- react-text: 448 -->Attachments<!-- /react-text --></span><span class="tabs-item-counter">24</span></a></li>
+                  <li id="tab-associations" class="tabs-item"><a href="javascript: void(0);" class="tabs-item-link"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 453 --> <!-- /react-text --><!-- react-text: 454 -->Related Tickets<!-- /react-text --></span><span class="tabs-item-counter">1</span></a></li>
+                    <li id="tab-followers" class="tabs-item"><a href="javascript: void(0);" class="tabs-item-link"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 459 --> <!-- /react-text --><!-- react-text: 460 -->Followers<!-- /react-text --></span><span class="tabs-item-counter">2</span></a></li>
+                      <li id="tab-merge-requests" class="tabs-item is-active"><a href="javascript: void(0);" class="tabs-item-link"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 465 --> <!-- /react-text --><!-- react-text: 466 -->Merge Requests<!-- /react-text --></span><span class="tabs-item-counter">0</span></a></li>
+                        <li id="tab-time" class="tabs-item"><a href="javascript: void(0);" class="tabs-item-link"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 471 --> <!-- /react-text --><!-- react-text: 472 -->Time<!-- /react-text --></span></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="spaces"></div>
+            <div id="activity-content" class="u-cf mb-m u-hidden">
+              <div class="float-left mnt-s mb-m fs-xxs lh-xxs"><a class="display-inlineBlock mr-s"><span data-icon="" class="mr-5 icon-checkbox--s"></span><!-- react-text: 77 -->Hide code comments<!-- /react-text --></a><a href="javascript: void(0);" class="mr-s">Leave a comment</a></div>
+              <div>
+                <div class="popup-loading" style="display: none;"></div>
+                <div class="u-cf mnt-sm mb-s float-right">
+                  <!-- react-empty: 113 -->
+                </div>
+                <ul class="u-cf clear-both pa-0">
+                  <li class="ls-none mb-s" id="comment-1182825823">
+                    <article class="u-cf position-relative mb-s pl-xxl">
+                      <div class="fs-xxs lh-xxs c-gray-2 float-right"><span class="c-gray--2 ml-s">2017-03-30 12:06</span><a class="ml-3 zeroclipboard" id="copyButton4" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1182825823"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a></div>
+                      <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px" height="34px" class="br-s"></a>
+                        <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">Marcin Ksiazkiewicz</a>
+                          <div>
+                            <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 mb-5 pl-s bl-3 bc-gray--4"><span><strong class="fw-6">Description</strong><!-- react-text: 131 --> <!-- /react-text --><span><span class="c-gray--2">set to</span>
+                              <!-- react-text: 134 -->
+                              <!-- /react-text --><strong class="fw-6">- improve UI/UX of the tag ...</strong></span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
+                  <li class="ls-none mb-s" id="comment-1183065753">
+                    <article class="u-cf position-relative mb-s pl-xxl">
+                      <div class="fs-xxs lh-xxs c-gray-2 float-right"><span class="c-gray--2 ml-s">2017-03-30 14:59</span><a class="ml-3 zeroclipboard" id="copyButton5" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1183065753"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a></div>
+                      <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/acmTsONqyr4lOQeJe4gwI3_1463693696" width="34px" height="34px" class="br-s"></a>
+                        <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">Sergiy Golub</a>
+                          <div></div>
+                        </div>
+                        <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative"><span><a href="http://breakout.tld:3000/profile/laithd">@laithd</a>  - good improvement for roadmap.</span></div>
+                    </article>
+                  </li>
+                  <li class="ls-none mb-s" id="comment-1183066093">
+                    <article class="u-cf position-relative mb-s pl-xxl">
+                      <div class="fs-xxs lh-xxs c-gray-2 float-right"><span class="c-gray--2 ml-s">2017-03-30 15:00</span><a class="ml-3 zeroclipboard" id="copyButton6" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1183066093"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a></div>
+                      <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/acmTsONqyr4lOQeJe4gwI3_1463693696" width="34px" height="34px" class="br-s"></a>
+                        <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">Sergiy Golub</a>
+                          <div>
+                            <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 mb-5 pl-s bl-3 bc-gray--4"><span><strong class="fw-6">Tags</strong><!-- react-text: 169 --> <!-- /react-text --><span><span class="c-gray--2">added</span>
+                              <!-- react-text: 172 -->
+                              <!-- /react-text --><strong class="fw-6">Roadmap</strong></span>
+                              <!-- react-text: 174 -->
+                              <!-- /react-text -->
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                    </article>
+                  </li>
+                  <li class="ls-none mb-s" id="comment-1186474473">
+                    <article class="u-cf position-relative mb-s pl-xxl">
+                      <div class="fs-xxs lh-xxs c-gray-2 float-right"><span class="c-gray--2 ml-s"></span><a class="ml-3 zeroclipboard" id="copyButton7" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1186474473"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a></div>
+                      <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px" height="34px" class="br-s"></a>
+                        <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">Marcin Ksiazkiewicz</a>
+                          <div>
+                            <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 mb-5 pl-s bl-3 bc-gray--4"><span><strong class="fw-6">Assigned to</strong><!-- react-text: 192 --> <!-- /react-text --><span class="c-gray--2">set to</span>
+                              <!-- react-text: 194 -->
+                              <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger"><strong>bartlomiej_skrzyczek</strong></a></span><span class="float-right c-gray--2 ml-s"><!-- react-text: 198 -->on <!-- /react-text --><!-- react-text: 199 -->2017-04-04 12:26<!-- /react-text --></span></div>
+                            <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 mb-5 pl-s bl-3 bc-gray--4"><span><strong class="fw-6">Status</strong><!-- react-text: 203 --> <!-- /react-text --><span><span class="c-gray--2">changed from</span>
+                              <!-- react-text: 206 -->
+                              <!-- /react-text --><strong class="fw-6">New</strong>
+                              <!-- react-text: 208 -->
+                              <!-- /react-text --><span class="c-gray--2">to</span>
+                              <!-- react-text: 210 -->
+                              <!-- /react-text --><strong class="fw-6">TakeMe</strong></span>
+                              </span><span class="float-right c-gray--2 ml-s"><!-- react-text: 213 -->on <!-- /react-text --><!-- react-text: 214 -->2017-04-04 12:27<!-- /react-text --></span></div>
+                        </div>
+              </div>
+              </article>
+              </li>
+              <li class="ls-none mb-s" id="comment-1188283043">
+                <article class="u-cf position-relative mb-s pl-xxl">
+                  <div class="fs-xxs lh-xxs c-gray-2 float-right"><span class="c-gray--2 ml-s">2017-04-06 11:46</span><a class="ml-3 zeroclipboard" id="copyButton8" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1188283043"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a></div>
+                  <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/7-1fbb97d7c440c8894d25f3af8b009c3f(2).png" width="34px" height="34px" class="br-s"></a>
+                    <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">bartlomiej_skrzyczek</a>
+                      <div>
+                        <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 mb-5 pl-s bl-3 bc-gray--4"><span><strong class="fw-6">Status</strong><!-- react-text: 232 --> <!-- /react-text --><span><span class="c-gray--2">changed from</span>
+                          <!-- react-text: 235 -->
+                          <!-- /react-text --><strong class="fw-6">TakeMe</strong>
+                          <!-- react-text: 237 -->
+                          <!-- /react-text --><span class="c-gray--2">to</span>
+                          <!-- react-text: 239 -->
+                          <!-- /react-text --><strong class="fw-6">In-Progress</strong></span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                </article>
+              </li>
+              <li class="ls-none mb-s" id="comment-1192203103">
+                <article class="u-cf position-relative mb-s pl-xxl">
+                  <div class="fs-xxs lh-xxs c-gray-2 float-right"><a href="javascript: void(0);" class="ml-s" title="Edit comment" rel="nofollow"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span></a><a href="javascript: void(0);" class="ml-s link-toNegative" title="Delete comment" rel="nofollow"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span></a><span class="c-gray--2 ml-s">2017-04-12 18:26</span>
+                    <a class="ml-3 zeroclipboard" id="copyButton9" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1192203103"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a>
+                  </div>
+                  <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/7-1fbb97d7c440c8894d25f3af8b009c3f(2).png" width="34px" height="34px" class="br-s"></a>
+                  <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">bartlomiej_skrzyczek</a>
+                    <div></div>
+                  </div>
+                  <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative"><span>The projected flow:<br><br>1) click on the list opens this window:<br><img src="./New main structure_05_files/aT16b2h6Kr57Ncdmr6QqzO" alt="Screen Shot 2017-04-12 at 7.51.53 PM.png"><br><br>2A) The input allows to search previously declared tags:<br><img src="./New main structure_05_files/biwsoSh6Kr54kNacwqEsg8" alt="Screen Shot 2017-04-12 at 7.52.05 PM.png"><br><br>3A) In case it was not found, there is an opportunity to add a tag with default color by clicking enter:<br><img src="./New main structure_05_files/bxDIaUh6Kr55yjacwqEsg8" alt="Screen Shot 2017-04-12 at 7.52.13 PM.png"><br><br>4A) <img src="./New main structure_05_files/b3BwXMh6Kr57Ncdmr6CpXy" alt="Screen Shot 2017-04-12 at 7.52.19 PM.png"><br><br>2B) Create a new tag opens a new window to pick up the color (colors are not ready yet)<br><img src="./New main structure_05_files/dVSkv0h7ar56_cacwqjQYw" alt="Screen Shot 2017-04-12 at 8.50.17 PM.png"><br><br><br>3B)<img src="./New main structure_05_files/cN6qoGh6Kr54kVacwqEsg8" alt="Screen Shot 2017-04-12 at 7.52.44 PM.png"><br><br>4B) Tag added succesfully:<br><img src="./New main structure_05_files/c6h3Fuh6Kr54updmr6QqzO" alt="Screen Shot 2017-04-12 at 7.52.50 PM.png"><br><br>5B) Already chosen tag has a different opacity than only declared tags:<br><img src="./New main structure_05_files/a9dn_Sh6Or57jDacwqjQXA" alt="Screen Shot 2017-04-12 at 8.02.33 PM.png"><br><br>Editing:<br><img src="./New main structure_05_files/ayOSBSh7er55OpacwqjQXA" alt="Screen Shot 2017-04-12 at 8.51.31 PM.png"><br><br>The input, due to production version, should always have bottom line:<br><img src="./New main structure_05_files/bjfHmAh7er56_cacwqjQYw" alt="Screen Shot 2017-04-12 at 8.52.50 PM.png"><br><br><br>cc <a href="http://breakout.tld:3000/profile/kolorowestudio">@kolorowestudio</a> </span></div>
+                </article>
+              </li>
+              <li class="ls-none mb-s" id="comment-1192309183">
+                <article class="u-cf position-relative mb-s pl-xxl">
+                  <div class="fs-xxs lh-xxs c-gray-2 float-right"><span class="c-gray--2 ml-s">2017-04-12 21:16</span><a class="ml-3 zeroclipboard" id="copyButton10" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1192309183"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a></div>
+                  <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px" height="34px" class="br-s"></a>
+                    <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">Marcin Ksiazkiewicz</a>
+                      <div></div>
+                    </div>
+                    <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative"><span><a href="http://breakout.tld:3000/profile/bartlomiej_skrzyczek">@bartlomiej_skrzyczek</a> in general looks good, I would have some lesser comments on the UI itself (margins, paddings), to be more pretty and more consistent with our styles, but flows are sweet.<br><br>- do not close tag picker on add or tag select - keep it open so user would be able to pick another if necessary, close on off click or ESC would work great<br><br>cc <a href="http://breakout.tld:3000/profile/laithd">@laithd</a> <br><br>here is xd demo <a rel="nofollow" href="https://xd.adobe.com/view/457b6399-6626-461c-bfa0-644971ff86e1/">https://xd.adobe.com/view/457b6399-6626-461c-bfa0-644971ff86e1/</a></span></div>
+                </article>
+              </li>
+              <li class="ls-none mb-s" id="comment-1192941573">
+                <article class="u-cf position-relative mb-s pl-xxl">
+                  <div class="fs-xxs lh-xxs c-gray-2 float-right"><span class="c-gray--2 ml-s">2017-04-13 18:28</span><a class="ml-3 zeroclipboard" id="copyButton11" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1192941573"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a></div>
+                  <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/d6FAG-4Aqr5Okcdmr6CpXy_1490028345" width="34px" height="34px" class="br-s"></a>
+                    <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">Laith Dahiyat</a>
+                      <div></div>
+                    </div>
+                    <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative"><span><a href="http://breakout.tld:3000/profile/sergiy_golub">@sergiy_golub</a> <a href="http://breakout.tld:3000/profile/kolorowestudio">@kolorowestudio</a> let's do it!</span></div>
+                </article>
+              </li>
+              <li class="ls-none mb-s" id="comment-1193226083">
+                <article class="u-cf position-relative mb-s pl-xxl">
+                  <div class="fs-xxs lh-xxs c-gray-2 float-right"><a href="javascript: void(0);" class="ml-s" title="Edit comment" rel="nofollow"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span></a><a href="javascript: void(0);" class="ml-s link-toNegative" title="Delete comment" rel="nofollow"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span></a><span class="c-gray--2 ml-s">2017-04-14 11:14</span>
+                    <a class="ml-3 zeroclipboard" id="copyButton12" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1193226083"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a>
+                  </div>
+                  <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/7-1fbb97d7c440c8894d25f3af8b009c3f(2).png" width="34px" height="34px" class="br-s"></a>
+                  <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">bartlomiej_skrzyczek</a>
+                    <div></div>
+                  </div>
+                  <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative"><span><a href="http://breakout.tld:3000/profile/kolorowestudio">@kolorowestudio</a> I am preparing drafts.</span></div>
+                </article>
+              </li>
+              <li class="ls-none mb-s" id="comment-1193231223">
+                <article class="u-cf position-relative mb-s pl-xxl">
+                  <div class="fs-xxs lh-xxs c-gray-2 float-right"><span class="c-gray--2 ml-s">2017-04-14 11:27</span><a class="ml-3 zeroclipboard" id="copyButton13" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/35193/details?comment=1193231223"><span aria-hidden="true" data-icon="" class="iconSize--xs mr-5"></span><span class="zeroclipboard-tooltip">Copied!</span><span class="hover-tooltip">Copy link to this comment</span></a></div>
+                  <a href="javascript: void(0);" class="u-pinTL js-modalTrigger"><img alt="User picture" src="./New main structure_05_files/acmTsONqyr4lOQeJe4gwI3_1463693696" width="34px" height="34px" class="br-s"></a>
+                    <div class="u-cf fs-s lh-xs"><span class="fs-xxs">by</span><a href="javascript: void(0);" class="fs-s ml-3 mr-s fw-6 js-modalTrigger">Sergiy Golub</a>
+                      <div></div>
+                    </div>
+                    <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative"><span><a href="http://breakout.tld:3000/profile/bartlomiej_skrzyczek">@bartlomiej_skrzyczek</a>  - please, let us know when dev can start :)</span></div>
+                </article>
+              </li>
+              </ul>
+              <div id="last_comment" class="u-cf clear-both"></div>
+              <div class="u-cf ta-right mb-m">
+                <!-- react-empty: 329 -->
+              </div>
+              <div class="who-is-here-section mb-m visible-sd ml-50">
+                <div>
+                  <div class="u-cf mb-s">
+                    <h3 class="fw-6 fs-s lh-xs float-left"><a class="link--darkToLight td-noneAll">Who Is Online?</a></h3>
+                  </div>
+                  <ul class="u-cf">
+                    <li class="pa-0 mb-s pr-xl ls-none hover--display position-relative"><a href="javascript: void(0);" class="display-block ws-nowrap of-hidden to-ellipsis  js-modalTrigger"><span><img alt="User picture" src="./New main structure_05_files/7-1fbb97d7c440c8894d25f3af8b009c3f(1).png" width="16px" height="16px" class="br-s va-top mr-5"><!-- react-text: 2055 -->bartlomiej_skrzyczek<!-- /react-text --></span></a>
+                      <div class="u-pinTR"><span aria-hidden="true" data-icon="" class="iconSize--xxs ml-5 c-positive"></span></div>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div id="leave_a_comment" class="textarea-dropzone u-cf position-relative mb-s pl-xxl pa-0--vp-xs">
+                <div class="u-pinTL mt-2 display-none--vp-xs"><img class="br-s" width="34" height="34" src="./New main structure_05_files/7-1fbb97d7c440c8894d25f3af8b009c3f(3).png"></div>
+                <fieldset class="bs-none pa-0">
+                  <div class="position-relative textarea-dropzone">
+                    <div class="u-cf bg-gray--5 pa-5 brt-m ba-1 bwb-0 bc-gray--4 mt-2">
+                      <div class="btnGroup float-left mr-s position-relative"><a title="Bold text: *Example* (Ctrl + B)" class="btnGroup-item btn--s btn--pressed" tabindex="400"><span aria-hidden="true" data-icon="" class="iconSize--xs"></span></a><a title="Italic text: _Example_ (Ctrl + I)" class="btnGroup-item btn--s btn--pressed" tabindex="400"><span aria-hidden="true" data-icon="" class="iconSize--xs"></span></a><a title="Heading: .h1 Example (Ctrl + 1)" class="btnGroup-item btn--s btn--pressed" tabindex="400"><span aria-hidden="true" data-icon="" class="iconSize--xs"></span></a>
+                        <a title="Code block: &lt;pre&gt;&lt;code&gt; example &lt;/code&gt;&lt;/pre&gt; (Ctrl + K)" class="btnGroup-item btn--s btn--pressed" tabindex="400"><span aria-hidden="true" data-icon="" class="iconSize--xs"></span></a><a title="Numeric List Item: # itemA (Ctrl + E)" class="btnGroup-item btn--s btn--pressed" tabindex="400"><span aria-hidden="true" data-icon="" class="iconSize--xs"></span></a>
+                          <a title="Bulleted List Item: * itemA (Ctrl + Shift + E)" class="btnGroup-item btn--s btn--pressed" tabindex="400"><span aria-hidden="true" data-icon="" class="iconSize--xs"></span></a>
+                      </div>
+                      <div class="btnGroup float-left mr-s position-relative" title="Link: [[url:http://www.example.com/|ExampleName]] (Ctrl + L)">
+                        <div class="btn--s btn--pressed"><span aria-hidden="true" data-icon="" class="iconSize--xs"></span></div>
+                        <div class="dropdown-content--left cursor-default ws-normal">
+                          <div class="arrow"></div>
+                          <div class="pt-sm plr-sm pb-s fw-4">
+                            <div class="ws-nowrap">
+                              <input class="input--s mr-s" placeholder="Place link url here...">
+                              <input type="button" class="btn--s btn--light" value="Insert">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="position-relative textarea-dropdown">
+                      <textarea id="new-comment" class="textarea width-100 mentionable" placeholder="Type @username to send an instant message to your teammates or else type @team to mention your entire team" rows="5"></textarea>
+                      <div>
+                        <div class="position-relative display-block textarea-context brb-m mb-s ptb-7 plr-s bs-solid bw-1 bt-0">
+                          <div><span class="c-gray--2"><!-- react-text: 366 -->Attach files by dragging &amp; dropping, <!-- /react-text --><a>selecting them from your computer</a><span>, pasting from the clipboard</span>
+                            <!-- react-text: 369 -->or
+                            <!-- /react-text --><a>more</a></span><span aria-hidden="true" data-icon="" class="iconSize--s float-left mr-s c-gray--3 va-middle"></span></div>
+                        </div>
+                        <div class="overlay-background position-absolute display-none">
+                          <div class="drophere"><span aria-hidden="true" data-icon="" class="display-block pb-m iconSize--l"></span><span>Drop files here to upload</span></div>
+                        </div>
+                      </div>
+                      <div class="display-none"></div>
+                    </div>
+                    <input type="file" multiple="" class="display-none" accept="*/*">
+                  </div>
+                  <div class="mb-s">
+                    <input type="submit" class="btn--s btn--positive is-disabled" value="Submit">
+                    <input type="button" class="btn--s btn--simple" value="Preview">
+                  </div>
+                  <div class="fs-xxs c-gray--2">[Ctrl/Cmd] + [Enter]</div>
+                </fieldset>
+                <div class="">
+                  <div class="display-inlineBlock float-right" style="position: relative; top: -55px; margin-left: 130px;">
+                    <div>
+                      <fieldset class="ticket-comment-fieldset wider-labels float-right">
+                        <div class="float-right ml-s">
+                          <label for="working_hours" class="display-block fs-xxs lh-xxs c-gray--2 undefined" title="Work remaining">
+                            <!-- react-text: 476 -->Work remaining
+                            <!-- /react-text -->
+                            <!-- react-text: 477 -->:
+                            <!-- /react-text -->
+                          </label>
+                          <input type="text" class="input--xs" size="4" style="width: 80px;">
+                        </div>
+                        <div class="float-right ml-s">
+                          <label for="resolved_hours" class="display-block fs-xxs lh-xxs c-gray--2 undefined" title="Worked hours">
+                            <!-- react-text: 481 -->Worked hours
+                            <!-- /react-text -->
+                            <!-- react-text: 482 -->:
+                            <!-- /react-text -->
+                          </label>
+                          <input type="text" class="input--xs" size="4" style="width: 80px;">
+                        </div>
+                      </fieldset>
+                      <fieldset class="ticket-comment-fieldset float-right">
+                        <div class="float-right ml-s">
+                          <label for="ticket_status_id" class="display-block fs-xxs lh-xxs c-gray--2 undefined" title="Status">
+                            <!-- react-text: 487 -->Status
+                            <!-- /react-text -->
+                            <!-- react-text: 488 -->:
+                            <!-- /react-text -->
+                          </label>
+                          <select class="input--xs" style="width: 130px;">
+                            <optgroup label="In progress">
+                              <option value="69184">New</option>
+                              <option value="14792753">Definition</option>
+                              <option value="14794093">TakeMe</option>
+                              <option value="173866">In-Progress</option>
+                              <option value="523629">Review</option>
+                              <option value="523643">Pending-Deploy</option>
+                              <option value="22711543">Approved</option>
+                            </optgroup>
+                            <optgroup label="Closed">
+                              <option value="383230">Invalid</option>
+                              <option value="487912">In-Production</option>
+                            </optgroup>
+                          </select>
+                          <!-- react-text: 501 -->&nbsp;
+                          <!-- /react-text -->
+                        </div>
+                        <div class="float-right">
+                          <div>
+                            <div class="float-right fs-xxs position-relative">
+                              <label class="display-block fs-xxs lh-xxs c-gray--2" title="Assigned to">
+                                <!-- react-text: 506 -->Assigned to
+                                <!-- /react-text -->
+                                <!-- react-text: 507 -->:
+                                <!-- /react-text -->
+                              </label>
+                              <div class="position-absolute u-pinAll"></div>
+                              <select class="input--xs" style="width: 130px;">
+                                <option value=""></option>
+                                <option value="aYb468xu8r5Okudmr6bg7m">me (bartlomiej_skrzyczek)</option>
+                                <option value="ae6wDGXB8r5Pj4acwqjQXA">Aleksandra_Ozdoba</option>
+                                <option value="crpaA6-hir5RnIacwqjQXA">aleksndra+8@assembla.com</option>
+                                <option value="dwrwWMOm0r3iyDabIlDkbG">Andrei Cuşnir</option>
+                                <option value="cFNzvwvdSr5OWzacwqEsg8">angela.bartels</option>
+                                <option value="cq3fSICkar5kddacwqEsg8">Artur Kremens</option>
+                                <option value="cODlKGwaar5OkxacwqjQYw">Brandon Garcia</option>
+                                <option value="aDW65GfIer5PZcacwqjQXA">Chrissie16</option>
+                                <option value="cS_mdoPrer5OZcdmr6bg7m">Christine Cremonni</option>
+                                <option value="aeSADoXgCr5y4CacwqEsg8">Clientview_Tester</option>
+                                <option value="bTVhveczer5ikWdmr6bg7m">Damian Szymański</option>
+                                <option value="c_EC3K0DCr5RyUdmr6QqzO">David Romoff</option>
+                                <option value="cgm-Aoldur5Okpdmr6CpXy">Ed Byrne</option>
+                                <option value="bTyJAAy4Cr5OkmacwqEsg8">Gabriela Fijalkowska</option>
+                                <option value="a4JSdcHcmr36NOeJe5cbCb">Ghulam Shabbir</option>
+                                <option value="a4i1R-eTGr5POrdmr6QqzO">Jacek Materna</option>
+                                <option value="aMhWueb9ar54NcacwqEsg8">Jakub Bajorek</option>
+                                <option value="d3hu0yLear5Ooidmr6CpXy">Jakub Mikrut</option>
+                                <option value="cd0rEG8Rqr5ytdacwqEsg8">John Dimou</option>
+                                <option value="cThYs6stir5RddacwqEsg8">jonathan stovall</option>
+                                <option value="d6FAG-4Aqr5Okcdmr6CpXy">Laith Dahiyat</option>
+                                <option value="afKB9MfOSr5Oocdmr6CpXy">Malgorzata Felis</option>
+                                <option value="dAiMh02ver5lZdacwqjQYw">Marcin Ksiazkiewicz</option>
+                                <option value="du_rEmUROr5ATIdmr6CpXy">Marketing Analytics account</option>
+                                <option value="byPdJ21Kir5OpcacwqEsg8">Mateusz Czerwinski</option>
+                                <option value="axqpkwcbur54kSdmr6CpXy">Matthew Theiss</option>
+                                <option value="azc2fw0uWr4zsKacwqjQXA">Mr. Andrew Jenkins</option>
+                                <option value="bZZFQkb_mr55qaacwqjQXA">Nick Honegger</option>
+                                <option value="doMzoEgh4r5OHYdmr6bg7m">paullynch</option>
+                                <option value="cR-zrawPOr5l7cacwqjQWU">Pavel Dotsulenko</option>
+                                <option value="dq1A0-6fer5OoNacwqjQYw">Przemyslaw Lukasik</option>
+                                <option value="cTwDFitpSr5OkGdmr6CpXy">Rae D. Cabello</option>
+                                <option value="bIsB5MbEer55XBdmr6bg7m">Ruben Dominguez</option>
+                                <option value="ajo4_gR_Or5Okgdmr6QqzO">sam perrow</option>
+                                <option value="c85f-412ur35WReJe5cbLA">Sergey Nazarov</option>
+                                <option value="acmTsONqyr4lOQeJe4gwI3">Sergiy Golub</option>
+                                <option value="aHAur6WCir4l0leJe5cbLr">Stanislav Kolotinskiy</option>
+                                <option value="aIING2b5Sr4QIXacwqjQWU">Toshi Dávila Chinen</option>
+                                <option value="aLhmG8-8Wr4j6uacwqjQWU">Vadim Todorov</option>
+                                <option value="cyjATCfOWr5OosacwqjQYw">Wojciech Lazar</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="attachments-content" class="u-cf mb-m u-hidden">
+          <div class="mb-m">
+            <div class="mt-10"></div>
+            <div class="file-attachments drop-zone u-uploadField attachment-tab overlay"><span class="drop-zone-deactivated"><div><span class="c-gray--2"><!-- react-text: 559 -->Attach files by dragging &amp; dropping, <!-- /react-text --><a>selecting them from your computer</a><!-- react-text: 561 --> or <!-- /react-text --><a>more</a></span>
+              <span aria-hidden="true" data-icon="" class="iconSize--s float-left mr-s c-gray--3 va-middle"></span>
+            </div>
+            <input type="file" multiple="" class="display-none" accept="*/*">
+            </span>
+          </div>
+        </div>
+        <div class="mt-20">
+          <table class="table table--m disableborder">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/ckhuUyftar560racwqjQXA/download/ckhuUyftar560racwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 578 -->blob<!-- /react-text --></a></td>
+                <td>120 KB</td>
+                <td>
+                  <!-- react-text: 581 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">Marcin Ksiazkiewicz</a>
+                  <!-- react-text: 583 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 584 -->2017-03-30
+                  <!-- /react-text -->
+                  <!-- react-text: 585 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/ckhuUyftar560racwqjQXA/edit">Upload new version</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/d3RbRAh5Or56Tcdmr6CpXy/download/d3RbRAh5Or56Tcdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 592 -->Screen Shot 2017-04-12 at 5.59.30 PM.png<!-- /react-text --></a></td>
+                <td>72.9 KB</td>
+                <td>
+                  <!-- react-text: 595 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 597 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 598 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 599 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/d3RbRAh5Or56Tcdmr6CpXy/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/azTunOh5Sr54kZacwqjQYw/download/azTunOh5Sr54kZacwqjQYw"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 608 -->Screen Shot 2017-04-12 at 5.59.52 PM.png<!-- /react-text --></a></td>
+                <td>159 KB</td>
+                <td>
+                  <!-- react-text: 611 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 613 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 614 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 615 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/azTunOh5Sr54kZacwqjQYw/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/a6PeNah5Sr57Vcdmr6CpXy/download/a6PeNah5Sr57Vcdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 624 -->Screen Shot 2017-04-12 at 6.00.06 PM.png<!-- /react-text --></a></td>
+                <td>136 KB</td>
+                <td>
+                  <!-- react-text: 627 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 629 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 630 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 631 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/a6PeNah5Sr57Vcdmr6CpXy/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/bAXd9Ih5Sr56ldacwqjQXA/download/bAXd9Ih5Sr56ldacwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 640 -->Screen Shot 2017-04-12 at 6.03.26 PM.png<!-- /react-text --></a></td>
+                <td>141 KB</td>
+                <td>
+                  <!-- react-text: 643 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 645 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 646 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 647 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/bAXd9Ih5Sr56ldacwqjQXA/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/cziNuWh5Sr54kcdmr6CpXy/download/cziNuWh5Sr54kcdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 656 -->Screen Shot 2017-04-12 at 6.03.45 PM.png<!-- /react-text --></a></td>
+                <td>139 KB</td>
+                <td>
+                  <!-- react-text: 659 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 661 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 662 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 663 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/cziNuWh5Sr54kcdmr6CpXy/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/c63CKyh5Sr54KTdmr6CpXy/download/c63CKyh5Sr54KTdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 672 -->Screen Shot 2017-04-12 at 6.06.26 PM.png<!-- /react-text --></a></td>
+                <td>126 KB</td>
+                <td>
+                  <!-- react-text: 675 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 677 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 678 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 679 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/c63CKyh5Sr54KTdmr6CpXy/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/a9ToHSh5Wr56m9dmr6bg7m/download/a9ToHSh5Wr56m9dmr6bg7m"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 688 -->Screen Shot 2017-04-12 at 6.06.44 PM.png<!-- /react-text --></a></td>
+                <td>135 KB</td>
+                <td>
+                  <!-- react-text: 691 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 693 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 694 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 695 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/a9ToHSh5Wr56m9dmr6bg7m/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/cj5_PSh5Wr54k6acwqjQXA/download/cj5_PSh5Wr54k6acwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 704 -->Screen Shot 2017-04-12 at 6.11.06 PM.png<!-- /react-text --></a></td>
+                <td>110 KB</td>
+                <td>
+                  <!-- react-text: 707 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 709 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 710 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 711 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/cj5_PSh5Wr54k6acwqjQXA/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/cBFc8uh5Wr54oJdmr6QqzO/download/cBFc8uh5Wr54oJdmr6QqzO"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 720 -->Screen Shot 2017-04-12 at 6.11.18 PM.png<!-- /react-text --></a></td>
+                <td>112 KB</td>
+                <td>
+                  <!-- react-text: 723 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 725 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 726 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 727 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/cBFc8uh5Wr54oJdmr6QqzO/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/cZuYqMh5Wr54kedmr6CpXy/download/cZuYqMh5Wr54kedmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 736 -->Screen Shot 2017-04-12 at 6.11.25 PM.png<!-- /react-text --></a></td>
+                <td>82 KB</td>
+                <td>
+                  <!-- react-text: 739 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 741 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 742 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 743 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/cZuYqMh5Wr54kedmr6CpXy/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/dsKunEh5Wr54Rddmr6CpXy/download/dsKunEh5Wr54Rddmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 752 -->Screen Shot 2017-04-12 at 6.11.38 PM.png<!-- /react-text --></a></td>
+                <td>160 KB</td>
+                <td>
+                  <!-- react-text: 755 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 757 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 758 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 759 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/dsKunEh5Wr54Rddmr6CpXy/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/aT16b2h6Kr57Ncdmr6QqzO/download/aT16b2h6Kr57Ncdmr6QqzO"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 768 -->Screen Shot 2017-04-12 at 7.51.53 PM.png<!-- /react-text --></a></td>
+                <td>39.4 KB</td>
+                <td>
+                  <!-- react-text: 771 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 773 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 774 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 775 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/aT16b2h6Kr57Ncdmr6QqzO/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/biwsoSh6Kr54kNacwqEsg8/download/biwsoSh6Kr54kNacwqEsg8"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 784 -->Screen Shot 2017-04-12 at 7.52.05 PM.png<!-- /react-text --></a></td>
+                <td>25.3 KB</td>
+                <td>
+                  <!-- react-text: 787 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 789 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 790 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 791 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/biwsoSh6Kr54kNacwqEsg8/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/bxDIaUh6Kr55yjacwqEsg8/download/bxDIaUh6Kr55yjacwqEsg8"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 800 -->Screen Shot 2017-04-12 at 7.52.13 PM.png<!-- /react-text --></a></td>
+                <td>22.2 KB</td>
+                <td>
+                  <!-- react-text: 803 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 805 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 806 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 807 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/bxDIaUh6Kr55yjacwqEsg8/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/b3BwXMh6Kr57Ncdmr6CpXy/download/b3BwXMh6Kr57Ncdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 816 -->Screen Shot 2017-04-12 at 7.52.19 PM.png<!-- /react-text --></a></td>
+                <td>7.1 KB</td>
+                <td>
+                  <!-- react-text: 819 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 821 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 822 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 823 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/b3BwXMh6Kr57Ncdmr6CpXy/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/cxq3Bah6Kr54kOacwqjQYw/download/cxq3Bah6Kr54kOacwqjQYw"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 832 -->Screen Shot 2017-04-12 at 7.52.37 PM.png<!-- /react-text --></a></td>
+                <td>25.5 KB</td>
+                <td>
+                  <!-- react-text: 835 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 837 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 838 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 839 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/cxq3Bah6Kr54kOacwqjQYw/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/cN6qoGh6Kr54kVacwqEsg8/download/cN6qoGh6Kr54kVacwqEsg8"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 848 -->Screen Shot 2017-04-12 at 7.52.44 PM.png<!-- /react-text --></a></td>
+                <td>26.8 KB</td>
+                <td>
+                  <!-- react-text: 851 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 853 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 854 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 855 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/cN6qoGh6Kr54kVacwqEsg8/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/c6h3Fuh6Kr54updmr6QqzO/download/c6h3Fuh6Kr54updmr6QqzO"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 864 -->Screen Shot 2017-04-12 at 7.52.50 PM.png<!-- /react-text --></a></td>
+                <td>6.89 KB</td>
+                <td>
+                  <!-- react-text: 867 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 869 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 870 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 871 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/c6h3Fuh6Kr54updmr6QqzO/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/dIQ0XAh6Kr56zIdmr6CpXy/download/dIQ0XAh6Kr56zIdmr6CpXy"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 880 -->Screen Shot 2017-04-12 at 7.52.57 PM.png<!-- /react-text --></a></td>
+                <td>45.1 KB</td>
+                <td>
+                  <!-- react-text: 883 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 885 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 886 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 887 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/dIQ0XAh6Kr56zIdmr6CpXy/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/a9dn_Sh6Or57jDacwqjQXA/download/a9dn_Sh6Or57jDacwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 896 -->Screen Shot 2017-04-12 at 8.02.33 PM.png<!-- /react-text --></a></td>
+                <td>63.2 KB</td>
+                <td>
+                  <!-- react-text: 899 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 901 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 902 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 903 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/a9dn_Sh6Or57jDacwqjQXA/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/dVSkv0h7ar56_cacwqjQYw/download/dVSkv0h7ar56_cacwqjQYw"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 912 -->Screen Shot 2017-04-12 at 8.50.17 PM.png<!-- /react-text --></a></td>
+                <td>34.9 KB</td>
+                <td>
+                  <!-- react-text: 915 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 917 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 918 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 919 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/dVSkv0h7ar56_cacwqjQYw/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/ayOSBSh7er55OpacwqjQXA/download/ayOSBSh7er55OpacwqjQXA"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 928 -->Screen Shot 2017-04-12 at 8.51.31 PM.png<!-- /react-text --></a></td>
+                <td>29.7 KB</td>
+                <td>
+                  <!-- react-text: 931 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 933 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 934 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 935 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/ayOSBSh7er55OpacwqjQXA/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+              <tr>
+                <td class="wb-breakAll ww-breakWord"><a href="http://breakout.tld:3000/spaces/breakout/documents/bjfHmAh7er56_cacwqjQYw/download/bjfHmAh7er56_cacwqjQYw"><span aria-hidden="true" data-icon="" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5"></span><!-- react-text: 944 -->Screen Shot 2017-04-12 at 8.52.50 PM.png<!-- /react-text --></a></td>
+                <td>56.7 KB</td>
+                <td>
+                  <!-- react-text: 947 -->Added by
+                  <!-- /react-text --><a href="javascript: void(0);" class=" js-modalTrigger">bartlomiej_skrzyczek</a>
+                  <!-- react-text: 949 -->on
+                  <!-- /react-text -->
+                  <!-- react-text: 950 -->2017-04-12
+                  <!-- /react-text -->
+                  <!-- react-text: 951 -->-
+                  <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/bjfHmAh7er56_cacwqjQYw/edit">Upload new version</a></td>
+                <td><a class="link--negative" href="javascript: void(0)"><span aria-hidden="true" data-icon="" class="iconSize--s" title="Delete this file"></span></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="associations-content" class="u-cf mb-m u-hidden">
+        <div class="u-cf mb-m">
+          <div id="associations" class="section">
+            <div>
+              <div class="u-cf mb-m  ptb-s plr-sm br-m fs-xs lh-xxs bg-positive u-hidden"><span aria-hidden="true" data-icon="" class="iconSize--s mr-5"></span>
+                <!-- react-text: 962 -->This is an
+                <!-- /react-text --><strong>Epic</strong>
+                <!-- react-text: 964 -->. It is a container for child stories. Each story can be finished at a different time.
+                <!-- /react-text --><a class="float-right" href="https://helpdesk.assembla.com/customer/en/portal/topics/634337-tickets-project-management/articles" target="_blank"><span aria-hidden="true" data-icon="" class="iconSize--s mr-5"></span><!-- react-text: 967 -->Learn more<!-- /react-text --></a></div>
+              <div class="u-cf mb-m  ptb-s plr-sm br-m fs-xs lh-xxs bg-warning--l u-hidden"><span aria-hidden="true" data-icon="" class="iconSize--s mr-5"></span>
+                <!-- react-text: 970 -->This is a
+                <!-- /react-text --><strong>Story</strong>
+                <!-- react-text: 972 -->. It can contain subtasks and bug reports, which are all finished and released at the same time
+                <!-- /react-text --><a class="float-right" href="https://helpdesk.assembla.com/customer/en/portal/topics/634337-tickets-project-management/articles" target="_blank"><span aria-hidden="true" data-icon="" class="iconSize--s mr-5"></span><!-- react-text: 975 -->Learn more<!-- /react-text --></a></div>
+            <div class="u-cf mb-m  ptb-s plr-sm br-m fs-xs lh-xxs bg-soft u-hidden">
+              <!-- react-text: 977 -->This is a
+              <!-- /react-text --><strong>Subtask</strong>
+              <!-- react-text: 979 -->. It is part of its parent story.
+              <!-- /react-text --><a class="float-right" href="https://helpdesk.assembla.com/customer/en/portal/topics/634337-tickets-project-management/articles" target="_blank"><span aria-hidden="true" data-icon="" class="iconSize--s mr-5"></span><!-- react-text: 982 -->Learn more<!-- /react-text --></a></div>
+        </div><a href="javascript: void(0);" class="float-right mt-5 u-hidden">Add a relation</a>
+        <h3 class="fw-6 fs-m lh-m mb-m">Related tickets</h3>
+        <div class="pt-s plr-sm ba-1 bc-gray--4 br-m bg-gray--5">
+          <div class="u-cf mb-s">
+            <h3 class="fw-6 fs-m lh-m mb-s">Relate to an existing ticket</h3>
+            <form action="http://breakout.tld:3000/spaces/breakout/tickets/35193/details/associations" class="s-form s-inline-form">
+              <div class="display-inlineBlock mr-m mb-5">
+                <label class="display-block fs-xxs lh-xxs c-gray--2">Space</label>
+                <select class="input--s" style="width: 130px;">
+                  <option value="bFuRawB8Sr5OoTdmr6bg7m">Assembla-design-team</option>
+                  <option value="az0vdOMSWr5Rj6acwqjQXA">Assembla-2-0</option>
+                  <option value="bFpMJQCsKr5Ry3acwqjQXA">Bartlomiej-skrzyczek</option>
+                  <option value="b6nRoCPC0r2Oq0aaeP0Qfc">Breakout</option>
+                  <option value="c1rJKE27ur3zn3ab7jnrAJ">Breakout-control</option>
+                  <option value="ctNz0ggbCr5Ok9dmr6QqzO">New-space-portfolio</option>
+                  <option value="cqxBO6HW0r5Qdddmr6QqzO">Neww</option>
+                  <option value="d9dX2SX3qr5OVcacwqjQXA">Portfolio</option>
+                  <option value="bzU-hgBImr5P3dacwqEsg8">Breakout-gravity</option>
+                  <option value="aItYs-7Eqr5Pfldmr6bg7m">Qualaroo</option>
+                  <option value="cLGRlSBC4r5Rxcdmr6QqzO">Space</option>
+                  <option value="bsPV7oHLCr5PiXacwqEsg8">Test-space-test</option>
+                  <option value="c95tHWLQGr5OymacwqjQYw">Time-space</option>
+                  <option value="cHMrU48XWr5iXQdmr6bg7m">Ui-test</option>
+                  <option value="cQSXwYHVWr5RpcacwqjQYw">We</option>
+                </select>
+              </div>
+              <div class="display-inlineBlock mr-m mb-5">
+                <label class="display-block fs-xxs lh-xxs c-gray--2">Ticket name</label>
+                <input type="text" class="input--s" size="50" placeholder="Search by ticket number or summary" autocomplete="off" aria-autocomplete="list" aria-haspopup="true"><span class="ml-5">is:</span></div>
+              <ul class="ui-autocomplete auto-list u-maxWidth--100" style="width: 12px; top: auto; left: 0px;"></ul>
+              <div class="display-inlineBlock mr-m mb-5">
+                <label class="display-block fs-xxs lh-xxs c-gray--2">Relation</label>
+                <select class="input--s" style="width: 130px;">
+                  <option value="0">Parent</option>
+                  <option value="1">Child</option>
+                  <option value="2">Related</option>
+                  <option value="3">Duplicated</option>
+                  <option value="6">Subtask</option>
+                  <option value="7">Before</option>
+                  <option value="8">After</option>
+                </select>
+              </div>
+              <div class="display-inlineBlock mr-m mb-5">
+                <input type="submit" value="Relate" class="btn--s btn--light" id="associate-button">
+              </div>
+            </form>
+          </div>
+          <hr class="bb-1 bc-gray--4 mb-s">
+          <div class="u-cf mb-s">
+            <h3 class="fw-6 fs-m lh-m mb-s">Relate to a new ticket</h3>
+            <div class="display-inlineBlock mr-m mb-5">
+              <label class="display-block fs-xxs lh-xxs c-gray--2">Add as</label>
+              <select class="input--s" style="width: 130px;">
+                <option value="0">Parent</option>
+                <option value="1">Child</option>
+                <option value="2">Related</option>
+                <option value="3">Duplicated</option>
+                <option value="6">Subtask</option>
+                <option value="7">Before</option>
+                <option value="8">After</option>
+              </select>
+            </div>
+            <input type="button" class="btn--s btn--light" value="Create new related ticket">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-cf mb-m">
+      <div class="content">
+        <div class="related-tickets-wrapper">
+          <ul class="pa-0">
+            <li class="ls-none pa-0 u-cf">
+              <div class="u-cf fs-s lh-xs pt-s mb-s bt-1 bc-gray--4"><span class="display-inlineBlock va-middle mr-5"><a class="u-followingStar float-left mr-3 link--lighterToLight"><span aria-hidden="true" data-icon="" class="iconSize--s"></span></a>
+                </span><span class="fs-xxs lh-xxs plr-4 mr-5 bg-gray--4 c-gray--1 br-m td-none display-inlineBlock va-middle"><!-- react-text: 1048 -->#<!-- /react-text --><!-- react-text: 1049 -->58<!-- /react-text --></span><span class="fs-xxs lh-xxs plr-4 mr-5 bg-gray--4 c-gray--1 br-m td-none display-inlineBlock va-middle">In Development</span>
+                <div class="float-right fs-xs ml-s pt-2"><span title="Click to change" class=" fw-6 mr-s link--darkToLight" style="cursor: pointer;"><!-- react-text: 1053 -->Related<!-- /react-text --><span aria-hidden="true" data-icon="" class="iconSize--xs"></span></span>
+                  <select class="hidden u-hidden">
+                    <option value="0">Parent</option>
+                    <option value="1">Child</option>
+                    <option value="2">Related</option>
+                    <option value="3">Duplicated</option>
+                    <option value="6">Subtask</option>
+                    <option value="7">Before</option>
+                    <option value="8">After</option>
+                  </select><a class="link--lightToLighter ml-5"><span aria-hidden="true" data-icon="" class="context-menu-gear iconSize--s"></span></a><a class="link--lightToLighter ml-5" title="Remove relation"><span aria-hidden="true" data-icon="" class="iconSize--s"></span></a></div>
+              <a href="http://breakout.tld:3000/spaces/webapp-roadmap/tickets/58-implement-coloring-for-tags/details" class="display-inline va-middle">Implement Coloring for Tags</a>
+            </div>
+        <ul class="u-cf pl-m"></ul>
+        </li>
+        </ul>
+      </div>
+      <div class="u-cf mb-m"><a class="float-right mt-s fs-xxs" href="javascript: void(0);">Add a subtask</a>
+        <h3 class="fw-6 fs-m lh-m mb-s">Subtasks</h3>
+        <!-- react-empty: 1072 -->
+        <!-- react-empty: 1073 -->
+        <div class="pt-s plr-sm ba-1 bc-gray--4 br-m bg-gray--5">
+          <div>
+            <h3 class="fw-6 mr-s mb-5"><!-- react-text: 1077 -->New <!-- /react-text --><!-- react-text: 1078 -->Subtask<!-- /react-text --></h3>
+            <form action="http://breakout.tld:3000/styleguide/drafts/draft_tags_main_view_tags_included.html#" class="s-form mb-s">
+              <div class="mb-5">
+                <label class="display-block fs-xxs lh-xxs c-gray--2">Ticket name</label>
+                <input type="text" class="input--s width-100" placeholder="Enter new subtask ticket title">
+              </div>
+              <div class="mb-5">
+                <label class="display-block fs-xxs lh-xxs c-gray--2">Ticket description</label>
+                <textarea class="textarea width-100" placeholder="Write an optional description" rows="3"></textarea>
+              </div>
+              <div class="display-inlineBlock mt-5 mr-m mb-5">
+                <input type="submit" value="Add Subtask" class="btn--s btn--light" disabled="">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="followers-content" class="u-cf mb-m u-hidden">
+    <div class="u-cf mb-m">
+      <div class="pt-s plr-sm ba-1 bc-gray--4 br-m bg-gray--5">
+        <h3 class="fw-6 fs-s lh-xxs mb-s">Add people from your team or external to follow ticket activity</h3>
+        <form action="http://breakout.tld:3000/spaces/breakout/tickets/35193/details/followers/follow" class="s-form">
+          <div class="display-inlineBlock mr-m mb-s">
+            <label class="display-block fs-xxs lh-xxs c-gray--2">User names</label>
+            <input type="text" size="50" class="input--s" autocomplete="off">
+            <ul class="ui-autocomplete auto-list u-maxWidth--100" style="width: 12px; top: auto; left: 0px;">
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Sergiy Golub (sergiy_golub)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Ghulam Shabbir (gshabbir)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Sergey Nazarov (natarajaya)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Vadim Todorov (tofir)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Stanislav Kolotinskiy (skolotinskiy)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Mr. Andrew Jenkins (Mr.Jenkins)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Toshi Dávila Chinen (Toshidavila)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Damian Szymański (damianszymanski)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Artur Kremens (artur.kremens)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Marcin Ksiazkiewicz (kolorowestudio)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Nick Venglovsky (Nick.V)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Marketing Analytics account (mrktng)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Clientview_Tester</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Andrei Cuşnir (andrei)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">John Dimou (Johndimou)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Jacek Materna (jacek.materna)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Malgorzata Felis (malgorzata-copper)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Wojciech Lazar (wlojtek)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Chrissie16</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">paullynch</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Ed Byrne (EdByrne210)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Ev Kontsevoy (gravitational)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">jonathan stovall (jonstovall)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">angela.bartels</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">bartlomiej_skrzyczek</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Gabriela Fijalkowska (gabi-fijalkowska)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Brandon Garcia (Brandon.Garcia)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Jakub Mikrut (jakub89119)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Rae D. Cabello (raedcabello)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Christine Cremonni (ccremonni)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">sam perrow (sam.perrow)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Aleksandra  (Aleksandra_Ozdoba)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Mateusz Czerwinski (mateusz_red)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Laith Dahiyat (laithd)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Przemyslaw Lukasik (plukasik)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Pavel Dotsulenko (pavel.d)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">aleksndra+8@assembla.com</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Jered H (jheeschen)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">David Romoff (david)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Jakub Bajorek (jakub.bajorek)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Ruben Dominguez (rubdom)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Nick Honegger (nickhonegger)</a></li>
+              <li class="ui-menu-item"><a class="ui-corner-all" tabindex="-1" href="javascript: void(0);">Matthew Theiss (mtheiss)</a></li>
+            </ul>
+          </div>
+          <div class="display-inlineBlock mr-m mb-s">
+            <input type="submit" class="btn--s btn--light" value="Add">
+          </div>
+          <div class="fs-xxs lh-xxs c-gray--2 mb-s">Multiple users can be added one by one or by separating with commas.</div>
+        </form>
+      </div>
+    </div>
+    <div class="u-cf mb-m">
+      <h3 class="fw-6 fs-s lh-xxs mb-m">Followers</h3>
+      <ul id="followers-list" class="pa-0">
+        <li class="ls-none pb-s mb-s bb-1 bc-gray--4"><a href="javascript: void(0);" class=" js-modalTrigger"><span><img alt="User picture" src="./New main structure_05_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="16px" height="16px" class="br-s va-middle mr-s"><!-- react-text: 1193 -->bartlomiej_skrzyczek<!-- /react-text --></span></a></li>
+        <li class="ls-none pb-s mb-s bb-1 bc-gray--4"><a href="javascript: void(0);" class=" js-modalTrigger"><span><img alt="User picture" src="./New main structure_05_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="16px" height="16px" class="br-s va-middle mr-s"><!-- react-text: 1198 -->Marcin Ksiazkiewicz<!-- /react-text --></span></a>
+          <div class="float-right fs-xs"><a class="link--lightToLighter" title="Remove follower"><span aria-hidden="true" class="iconSize--s lh-xs" data-icon=""></span></a></div>
+    </li>
+    </ul>
+  </div>
+  <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 pl-s bl-3 bc-gray--4">
+    <!-- react-text: 1203 -->Followers will receive email updates about new ticket activity or emails sent to
+    <!-- /react-text --><a href="mailto:breakout+35193@tickets.assembla.com">breakout+35193@tickets.assembla.com</a></div>
+  </div>
+  <div id="merge-requests-content" class="u-cf mb-m">
+    <div class="u-cf mb-m">
+      <li class="u-cf ls-none ma-0 pt-s plr-0 pb-0 bc-gray--4 bt-1">Nothing to see here</li>
+    </div>
+  </div>
+  <div id="time-content" class="u-cf mb-m u-hidden">
+    <div class="u-cf mb-m">
+      <div class="u-row mb-m mnl-l mnr-l">
+        <div class="width-50 width-100--vp-s plr-l">
+          <label class="display-block fs-xxs lh-xxs c-gray--2">Worked hours</label>
+          <div class="plr-s ptb-5 mb-s br-m ba-1 bc-gray--4 bg-gray--5">
+            <div class="fs-xl lh-l">0.00</div>
+          </div>
+          <div class="u-cf mb-m">
+            <form action="http://breakout.tld:3000/spaces/breakout/tickets/35193/details/time/update_invested">
+              <input type="text" class="input--m mr-5" size="4">
+              <input type="submit" class="btn--m btn--light mr-5" value="Add"><span class="c-gray--2 fs-xxs lh-xxs">Add only time invested by you</span></form>
+          </div>
+          <div class="u-cf mb-m"></div>
+        </div>
+        <div class="width-50 width-100--vp-s plr-l">
+          <div>
+            <div>
+              <label class="display-block fs-xxs lh-xxs c-gray--2">Work Hours Remaining</label>
+              <div class="plr-s ptb-5 mb-s br-m ba-1 bc-gray--4 bg-gray--5">
+                <div class="fs-xl lh-l">-</div>
+              </div>
+            </div>
+            <div class="u-cf mb-m">
+              <form action="http://breakout.tld:3000/spaces/breakout/tickets/35193/details/time/update_remaining">
+                <input type="text" class="input--m mr-5" size="4">
+                <input type="submit" class="btn--m btn--light mr-5" value="Update"><span class="c-gray--2 fs-xxs lh-xxs">Update remaining estimate</span></form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+</section>
+
+
+
+
+
+<script id="wappalyzer" src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/inject.js"></script><iframe width="0" height="0" frameborder="0" src="./New main structure_05_files/saved_resource.html" style="border: 0px solid; display: none; position: absolute; z-index: 2147483647; height: 0px; width: 0px; background-color: transparent;" id="GINGER_SOFTWARE_bubblesIFrame" scrolling="no"></iframe><div id="GingerWidgetInfo" style="display:none;">{"version":"0.1.0.627","isExtension":true,"extensionName":"Chrome"}</div></body><script>(function(){(function (){
+            //Todo:is injection needed here?
+            var eventRegister = {};
+
+            var findReactProp = function(elem){
+                for(var key in elem){
+                    if(key.indexOf("__reactInternalInstance")===0){
+                        //var p = null;
+                        //if(elem[key].memoizedProps){
+                        //    p = elem[key].memoizedProps;
+                        //} else if(elem[key]._currentElement){
+                        //    p = elem[key]._currentElement.props
+                        //}
+
+                        //TODO: report if props is not found with Facebook version
+                        return (elem[key].memoizedProps || elem[key]._currentElement.props);
+                    }
+                }
+                return null;
+            };
+
+            document.addEventListener("gingerModule-eventEmitter-react-fire",function(e){
+                //console.log("firing", e);
+                var reactProps = findReactProp(document.activeElement);
+                var eventName = e.detail.event;
+                var eventParams = e.detail.params || {};
+                eventParams.preventDefault = function(){};
+                if(reactProps && eventName) {
+                    reactProps[eventName](eventParams);
+                }
+            });
+            document.addEventListener("gingerModule-eventEmitter-onselect",function(e){
+                var reactProps = findReactProp(document.activeElement);
+                //trigger("select");
+                if(reactProps) {
+                    reactProps.onSelect();
+                }
+            });
+            document.addEventListener("gingerModule-eventEmitter-onpaste",function(e){
+                var reactProps = findReactProp(document.activeElement);
+                var pasteObj = {
+                    defaultPrevented: false,
+                    target: document.activeElement,
+                    preventDefault: function() {},
+                    clipboardData : {
+                        getData: function () {
+                            return e.detail || "";
+                        },
+                        items: ["text/plain"]
+                    }
+                };
+                //trigger("paste",pasteObj);
+                if(reactProps) {
+                    reactProps.onPaste(pasteObj);
+                }
+            });
+
+            var trigger = function(eventName,data){
+                if(!eventRegister[eventName]) return;
+                for(var i = 0; i<eventRegister[eventName].length; i++){
+                    var listener = eventRegister[eventName][i];
+                    listener(new CustomEvent(eventName),data);
+                }
+            };
+
+            var nativeEventListener = document.addEventListener.bind(document);
+            document.addEventListener = function(eventName, callback, options) {
+                console.log("registering event",eventName);
+                var eventRegisterItem = eventRegister[eventName] || [];
+                eventRegisterItem.push(callback);
+                eventRegister[eventName] = eventRegisterItem;
+                nativeEventListener(eventName, callback, options);
+            };
+
+        })() })()</script></html>

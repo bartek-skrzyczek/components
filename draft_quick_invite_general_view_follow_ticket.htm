@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)http://breakout.tld:3000/styleguide/drafts/draft_quick_invite_general_view_follow_ticket.html -->
+<html lang="en" class="toolbarActive edit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>New main structure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./New main structure_02_files/jquery.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" media="all" href="./New main structure_files/v4_structure.css">
+    <link rel="stylesheet" media="all" href="./New main structure_files/v4.css">
+    <link rel="stylesheet" media="all" href="./New main structure_files/v4-global.css">
+    <script type="text/javascript">
+    <!--
+
+        $(window).on('mousewheel DOMMouseScroll', function (e) {
+
+            var direction = (function () {
+
+                var delta = (e.type === 'DOMMouseScroll' ?
+                             e.originalEvent.detail * -40 :
+                             e.originalEvent.wheelDelta);
+
+                return delta > 0 ? 0 : 1;
+            }());
+
+            if(direction === 1) {
+               $('#mainTopOne').height(0);
+            }
+            if(direction === 0) {
+               $('#mainTopOne').height(30);
+            }
+        });
+
+        function toggle_visibility(id) {
+           var e = document.getElementById(id);
+           if(e.style.display == 'none')
+              e.style.display = 'block';
+           else
+              e.style.display = 'none';
+        }
+
+        function toggle_height(id) {
+           var e = document.getElementById(id);
+           e.style.height = '0';
+        }
+
+    //-->
+    </script>
+
+  <style type="text/css" id="GINGER_SOFTWARE_style">.GINGER_SOFTWARE_noMark { background : transparent; }  .GINGER_SOFTWARE_wrapper{ position: absolute; overflow: hidden; margin: 0px; padding: 0px; border: 0px solid transparent } .GINGER_SOFTWARE_contour { position : absolute; margin: 0px; }  .GINGER_SOFTWARE_richText { margin : 0px; padding-bottom: 3px; border-width: 0px; border-color: transparent; display: block; color: transparent; -webkit-text-fill-color: transparent; overflow: hidden; white-space: pre-wrap;}  .GINGER_SOFTWARE_inputWrapper .GINGER_SOFTWARE_richText {position: absolute;}  .GINGER_SOFTWARE_canvas { display:none; background-repeat:no-repeat;}  .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark {border-top-left-radius:2px; border-top-right-radius:2px; border-bottom-right-radius:2px; border-bottom-left-radius:2px;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark {background-image:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQ0Y2OENGMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQ0Y2OEQwMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEVDRjY4Q0QzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEVDRjY4Q0UzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5RRxRxAAAAD0lEQVR42mK48+w7QIABAAVbAroowN08AAAAAElFTkSuQmCC)!important;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling.GINGER_SOFTWARE_synonym, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark.GINGER_SOFTWARE_synonym {background-image:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfACAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH/w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBblCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKBNA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7iJIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAAXkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRByAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRRIkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQcrQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXACTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPENyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJAcaT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgXaPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZD5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2epO6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2qqaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6feeb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYPjGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFostqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuutm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPjthPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofcn8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw33jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgqTXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWFfevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaql+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRSj9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtbYlu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L158Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89HcR/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfyl5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz/GMzLdsAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAABJJREFUeNpi+P9gEwAAAP//AwAFcwKS3d7BnwAAAABJRU5ErkJggg==)!important;} .GINGER_SOFTWARE_control .GINGER_SOFTWARE_correct.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_SpellingCorrect.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_spelling.GINGER_SOFTWARE_noSuggestion, .GINGER_SOFTWARE_control .GINGER_SOFTWARE_mark.GINGER_SOFTWARE_noSuggestion {background-image:url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhFQ0Y2OENGMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhFQ0Y2OEQwMzE5OTExRTI4NjMxOTExNTUyMDhEMDMwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEVDRjY4Q0QzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEVDRjY4Q0UzMTk5MTFFMjg2MzE5MTE1NTIwOEQwMzAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5RRxRxAAAAD0lEQVR42mK48+w7QIABAAVbAroowN08AAAAAElFTkSuQmCC)!important;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_correct, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_SpellingCorrect, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_spelling, .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_mark {position:relative; background-image:none!important;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightLeft { position : absolute; left:-2px; top:0px; bottom:0px; width:2px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightRight { position : absolute; right:-2px; top:0px; bottom:0px; width:2px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightTop { position : absolute; left:0px; right:0px; top:-2px; height:3px;} .GINGER_SOFTWARE_richText .GINGER_SOFTWARE_markHighlightBottom { position : absolute; left:0px; right:0px; bottom:-2px; height:3px;}</style></head>
+
+  <!--
+  IMPORTANT ! ==================================
+  flex items can not be seperated by any wrapper
+  ==============================================
+  -->
+
+  <body class="" basecontrol="" ginger_software_stylesheet="true" ginger_software_doc="true">
+
+<!--
+    <div class="baseWrapper baseFlexbox baseFlex-column" mainWrapper>
+
+
+
+      <div class="baseFlexChild-none" notInUseTestOnly>
+        <div branding class="pa-s fs-xs bg-positive c-white" id="tmp_topinfo">
+          Just a baseFlexChild-none item - means does not stretch automatic. But will get 0 height if empty :)
+          <span class="float-right link--White" onclick="toggle_visibility('tmp_topinfo');">Check out you can close me! <span aria-hidden="true" data-icon="&#xe626;" class="iconSize--s"></span></span>
+        </div>
+      </div>
+
+      <div class="baseFlexChild-none" mainTopOne>
+        <div class="baseAnimeMe" id="tmp_mainNavWrapper" style="height: 74px;">
+
+          <div branding class="bg-gray--1 c-white pa-s">Branding</div>
+          <div topNav class="bg-link c-white pa-s">
+            Main navigation bar. With CSS transitions I'll be always smooth.
+            <span class="float-right link--White" onclick="toggle_height('tmp_mainNavWrapper');">Check out you can slide me out! <span aria-hidden="true" data-icon="&#xe605;" class="iconSize--s"></span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="baseFlexChild-none" mainTopOne id="tmp_mainSecNav">
+        <div secNav class="pa-s">sec nav</div>
+      </div>
+
+
+
+      <div class="baseFlexContent" mainContent>
+
+      </div>
+
+    </div>
+-->
+
+
+    <script>
+ $(function() {
+     $("#hook-followers-dropdown-list").hide();
+     $("#display-list-of-following-users").focusin(function() {
+         $("#hook-followers-dropdown-list").show();
+     }).focusout(function () {
+         $("#hook-followers-dropdown-list").hide();
+     });
+ });
+</script>
+<div class="plr-l width-70 width-66--vp-n width-100--vp-s u-cardwallWrapper u-cf fs-xs lh-xs pl-l pr-m pt-s u-cf">
+  <div class="u-cf mb-m" id="ticket_tabs">
+    <div class="u-tabs">
+      <ul class="tabs-list">
+        <li class="tabs-item" id="tab-activity">
+          <a class="tabs-item-link" href="javascript:%20void(0);"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 4113 --> <!-- /react-text --><!-- react-text: 4114 -->Activity<!-- /react-text --></span></a>
+        </li>
+        <li class="tabs-item" id="tab-attachments">
+          <a class="tabs-item-link" href="javascript:%20void(0);"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 4893 --> <!-- /react-text --><!-- react-text: 4894 -->Attachments<!-- /react-text --></span><span class="tabs-item-counter">7</span></a>
+        </li>
+        <li class="tabs-item" id="tab-associations">
+          <a class="tabs-item-link" href="javascript:%20void(0);"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 4899 --> <!-- /react-text --><!-- react-text: 4900 -->Related Tickets<!-- /react-text --></span><span class="tabs-item-counter">1</span></a>
+        </li>
+        <li class="tabs-item is-active" id="tab-followers">
+          <a class="tabs-item-link" href="javascript:%20void(0);"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 4905 --> <!-- /react-text --><!-- react-text: 4906 -->Followers<!-- /react-text --></span><span class="tabs-item-counter">4</span></a>
+        </li>
+        <li class="tabs-item" id="tab-merge-requests">
+          <a class="tabs-item-link" href="javascript:%20void(0);"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 4911 --> <!-- /react-text --><!-- react-text: 4912 -->Merge Requests<!-- /react-text --></span><span class="tabs-item-counter">2</span></a>
+        </li>
+        <li class="tabs-item" id="tab-time">
+          <a class="tabs-item-link" href="javascript:%20void(0);"><span class="iconSize--xs mr-3" data-icon=""><!-- react-text: 4917 --> <!-- /react-text --><!-- react-text: 4918 -->Time<!-- /react-text --></span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="spaces"></div>
+  <div class="u-cf mb-m u-hidden" id="activity-content">
+    <div class="float-left mnt-s mb-m fs-xxs lh-xxs">
+      <a class="display-inlineBlock mr-s"><span class="mr-5 icon-checkbox--s" data-icon=""></span><!-- react-text: 4120 -->Hide code comments<!-- /react-text --></a> <a class="mr-s" href="javascript:%20void(0);">Leave a comment</a>
+    </div>
+    <div>
+      <div class="popup-loading" style="display: none;"></div>
+      <div class="u-cf mnt-sm mb-s float-right">
+        <!-- react-empty: 4193 -->
+      </div>
+      <ul class="u-cf clear-both pa-0">
+        <li class="ls-none mb-s" id="comment-1271888503">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s"></span> <a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1271888503" id="copyButton33"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span> <span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span> <span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Marcin Ksiazkiewicz</a>
+              <div>
+                <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 mb-5 pl-s bl-3 bc-gray--4">
+                  <span><strong class="fw-6">Description</strong><!-- react-text: 4211 --> <!-- /react-text -->
+                   <span><span class="c-gray--2">set to</span> <!-- react-text: 4214 -->
+                   <!-- /react-text -->
+                   <strong class="fw-6">Provide needed ui elemnts a...</strong></span></span> <span class="float-right c-gray--2 ml-s"><!-- react-text: 4217 -->on <!-- /react-text --><!-- react-text: 4218 -->2017-08-22 10:50<!-- /react-text --></span>
+                </div>
+                <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 mb-5 pl-s bl-3 bc-gray--4">
+                  <span><strong class="fw-6">Assigned to</strong><!-- react-text: 4222 --> <!-- /react-text -->
+                   <span class="c-gray--2">set to</span> <!-- react-text: 4224 -->
+                   <!-- /react-text -->
+                   <a class=" js-modalTrigger" href="javascript:%20void(0);"><strong>bartlomiej_skrzyczek</strong></a></span> <span class="float-right c-gray--2 ml-s"><!-- react-text: 4228 -->on <!-- /react-text --><!-- react-text: 4229 -->2017-08-22 10:50<!-- /react-text --></span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1271911743">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s"></span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1271911743" id="copyButton34"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div>
+                <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 mb-5 pl-s bl-3 bc-gray--4">
+                  <span><strong class="fw-6">Due date</strong><!-- react-text: 4247 --> <!-- /react-text --><span><span class="c-gray--2">set to</span> <!-- react-text: 4250 -->
+                   <!-- /react-text --><strong class="fw-6">2017-08-22</strong></span></span> <span class="float-right c-gray--2 ml-s"><!-- react-text: 4253 -->on <!-- /react-text --><!-- react-text: 4254 -->2017-08-22 11:20<!-- /react-text --></span>
+                </div>
+                <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 mb-5 pl-s bl-3 bc-gray--4">
+                  <span><strong class="fw-6">Status</strong><!-- react-text: 4258 --> <!-- /react-text --><span><span class="c-gray--2">changed from</span> <!-- react-text: 4261 -->
+                   <!-- /react-text --><strong class="fw-6">New</strong> <!-- react-text: 4263 -->
+                   <!-- /react-text --><span class="c-gray--2">to</span> <!-- react-text: 4265 -->
+                   <!-- /react-text --><strong class="fw-6">In-Progress</strong></span></span> <span class="float-right c-gray--2 ml-s"><!-- react-text: 4268 -->on <!-- /react-text --><!-- react-text: 4269 -->2017-08-22 11:24<!-- /react-text --></span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272031353">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-22 14:16</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272031353" id="copyButton35"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div></div>
+            </div>
+            <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <div>
+                <div class="commit-comment-header mb-5 fw-6">
+                  <span>adding a new section to admin panel</span>
+                </div>
+                <div class="commit-comment-footer fs-xs mb-s">
+                  <!-- react-text: 4289 -->Committed to: <!-- /react-text --><span class="fw-6">breakout.bartek:ticket_36067</span>
+                </div>
+                <div class="fs-xs lh-xxs mb-m c-gray--2 ff-code">
+                  re <a href="http://breakout.tld:3000/spaces/breakout/tickets/36067">#36067</a>
+                </div>
+                <div class="fs-xs lh-xs">
+                  <!-- react-text: 4293 -->In <!-- /react-text --><a href="http://breakout.tld:3000/code/breakout/git-102/commit/4a90d579f4aa9bc1ed6e1f85892723bea3d5639a">breakout.bartek:4a90d579f4aa9bc1ed6e1f85892723bea3d5639a</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272068883">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <a class="ml-s" href="javascript:%20void(0);" rel="nofollow" title="Edit comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><a class="ml-s link-toNegative" href="javascript:%20void(0);" rel="nofollow" title="Delete comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><span class="c-gray--2 ml-s">2017-08-22 14:59</span> <a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272068883" id="copyButton36"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div></div>
+            </div>
+            <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span>1. Should be icon for Googe Auth added, as well as Portfolio code?<br>
+              <br>
+              2. Are you sure, the order is correct? Should be Portfolio Join Code placed above other tool, like Automatic Data Backup? What if another tool will be added below? Then it suggests, that is being part of Google Auth, but it is not.<br>
+              It is completely different information and should not be part of the rest.<br>
+              <a href="http://breakout.tld:3000/profile/kolorowestudio">@kolorowestudio</a></span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272175433">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-22 16:45</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272175433" id="copyButton37"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Marcin Ksiazkiewicz</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span><a href="http://breakout.tld:3000/profile/bartlomiej_skrzyczek">@bartlomiej_skrzyczek</a> not sure if it is in the font icons</span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272175773">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-22 16:46</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272175773" id="copyButton38"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Marcin Ksiazkiewicz</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span>also do not change the order please</span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272382453">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-22 21:56</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272382453" id="copyButton39"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div></div>
+            </div>
+            <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <div>
+                <div class="commit-comment-header mb-5 fw-6">
+                  <span>some views for data backups</span>
+                </div>
+                <div class="commit-comment-footer fs-xs mb-s">
+                  <!-- react-text: 4366 -->Committed to: <!-- /react-text --><span class="fw-6">breakout.bartek:ticket_36067</span>
+                </div>
+                <div class="fs-xs lh-xxs mb-m c-gray--2 ff-code">
+                  re <a href="http://breakout.tld:3000/spaces/breakout/tickets/36067">#36067</a>
+                </div>
+                <div class="fs-xs lh-xs">
+                  <!-- react-text: 4370 -->In <!-- /react-text --><a href="http://breakout.tld:3000/code/breakout/git-102/commit/5c6065b735595d0254df754027c3083138e7d5e2">breakout.bartek:5c6065b735595d0254df754027c3083138e7d5e2</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272388953">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <a class="ml-s" href="javascript:%20void(0);" rel="nofollow" title="Edit comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><a class="ml-s link-toNegative" href="javascript:%20void(0);" rel="nofollow" title="Delete comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><span class="c-gray--2 ml-s">2017-08-22 22:10</span> <a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272388953" id="copyButton40"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div></div>
+            </div>
+            <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span>There are not icons designed for these two features. I meant to prepare and add them as new ones.<br>
+              The view is confusing: Google Auth and Portfolio Code are not part of SAML. I did not change it.<br>
+              <br>
+              <img alt="Screen Shot 2017-08-22 at 9.56.00 PM.png" src="./New main structure_02_files/cnUOogH3qr54oEacwqjQYw"><br>
+              <img alt="Screen Shot 2017-08-22 at 10.03.04 PM.png" src="./New main structure_02_files/d0se1aH3qr54o-dmr6CpXy"><br>
+              <img alt="Screen Shot 2017-08-22 at 10.01.58 PM.png" src="./New main structure_02_files/drmrRgH3qr56u6dmr6QqzO"><br>
+              <br>
+              Some views for backups were attached. Please do not review the draft code, stream classes do not work for drafts and it is just for visual purposes only.<br>
+              Are we going to rebuild a little bit a list on Stream, or keep the same style?<br>
+              v4 works well on stream view.<br>
+              Thanks, <a href="http://breakout.tld:3000/profile/kolorowestudio">@kolorowestudio</a></span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272389143">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <a class="ml-s" href="javascript:%20void(0);" rel="nofollow" title="Edit comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><a class="ml-s link-toNegative" href="javascript:%20void(0);" rel="nofollow" title="Delete comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><span class="c-gray--2 ml-s">2017-08-22 22:11</span> <a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272389143" id="copyButton41"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div></div>
+            </div>
+            <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span><a href="http://breakout.tld:3000/profile/gabi-fijalkowska">@gabi-fijalkowska</a></span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272777733">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 06:35</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272777733" id="copyButton42"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/bTyJAAy4Cr5OkmacwqEsg8_1471372240" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Gabriela Fijalkowska</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span><a href="http://breakout.tld:3000/profile/bartlomiej_skrzyczek">@bartlomiej_skrzyczek</a> <a href="http://breakout.tld:3000/profile/kolorowestudio">@kolorowestudio</a> If you have the problem with creating a draft with stream classes I can develop it without the draft. I just need to know how it should look like (the visualisation), and I can implement it, based on the same html and css as the stream is. But icons are needed.</span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272814863">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 08:28</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272814863" id="copyButton43"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Marcin Ksiazkiewicz</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span><a href="http://breakout.tld:3000/profile/bartlomiej_skrzyczek">@bartlomiej_skrzyczek</a> please assist early morning girl <a href="http://breakout.tld:3000/profile/gabi-fijalkowska">@gabi-fijalkowska</a></span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272816663">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 08:32</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272816663" id="copyButton44"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/bTyJAAy4Cr5OkmacwqEsg8_1471372240" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Gabriela Fijalkowska</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span>haha ;p<br>
+              <a href="http://breakout.tld:3000/profile/kolorowestudio">@kolorowestudio</a> <a href="http://breakout.tld:3000/profile/bartlomiej_skrzyczek">@bartlomiej_skrzyczek</a> about the title - "Automatic Data Backup". Shouldn't be something like - "Repositories Audit Logs"?</span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272817803">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 08:35</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272817803" id="copyButton45"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Marcin Ksiazkiewicz</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span>is it a full data backup, or just repos ? <a href="http://breakout.tld:3000/profile/gabi-fijalkowska">@gabi-fijalkowska</a> ?</span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272818043">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 08:36</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272818043" id="copyButton46"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/bTyJAAy4Cr5OkmacwqEsg8_1471372240" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Gabriela Fijalkowska</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span><a href="http://breakout.tld:3000/profile/kolorowestudio">@kolorowestudio</a> just repos</span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272820883">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 08:42</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272820883" id="copyButton47"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Marcin Ksiazkiewicz</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span>Audit log sounds like a log not data backup, <a href="http://breakout.tld:3000/profile/sergiy_golub">@sergiy_golub</a> please clarify cc <a href="http://breakout.tld:3000/profile/gabi-fijalkowska">@gabi-fijalkowska</a></span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272832273">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <a class="ml-s" href="javascript:%20void(0);" rel="nofollow" title="Edit comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><a class="ml-s link-toNegative" href="javascript:%20void(0);" rel="nofollow" title="Delete comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><span class="c-gray--2 ml-s">2017-08-23 09:04</span> <a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272832273" id="copyButton48"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div></div>
+            </div>
+            <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span>There will be a css class with icon included needed for that, and probably two colors (positive and negative). <a href="http://breakout.tld:3000/profile/gabi-fijalkowska">@gabi-fijalkowska</a></span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1272982743">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <a class="ml-s" href="javascript:%20void(0);" rel="nofollow" title="Edit comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><a class="ml-s link-toNegative" href="javascript:%20void(0);" rel="nofollow" title="Delete comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><span class="c-gray--2 ml-s">2017-08-23 12:21</span> <a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1272982743" id="copyButton49"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div></div>
+            </div>
+            <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span>For icons, you will need:<br>
+              a) already existing<br>
+              .ico-build:before {<br>
+              content: "\e68b";<br>
+              }<br>
+              Please paste it to appassets/stylesheets/globals/_icons.scss:<br></span>
+              <pre><span><code>.ico-event-success {
+content: "\e65b";
+}</code></span></pre><span><br></span>
+              <pre><span><code>.ico-event-failure {
+content: "\e65a";
+}</code></span></pre><span><br>
+              <br>
+              Or we can check, if data-icon is recognizable, sample row:<br></span>
+              <pre><span><code>&lt;tbody&gt;
+                      &lt;tr class="stream-date"&gt;
+                          &lt;td colspan="3"&gt;&lt;span&gt;2017-08-22&lt;/span&gt;&lt;/td&gt;
+                      &lt;/tr&gt;
+          &lt;tr class="navlink"&gt;
+            &lt;td class="hour"&gt;&lt;span&gt;17:25&lt;/span&gt;&lt;/td&gt;
+            &lt;td class="event-type"&gt;
+              &lt;a class="iconSize--s success" title="" data-icon="&amp;#xe65b" target="_blank"&gt;&lt;/a&gt;
+            &lt;/td&gt;
+                          &lt;td class="space-name"&gt;
+                          &lt;span&gt;Automatic Data Backup in&lt;/span&gt;
+                              &lt;a class="itemlink" href="https://assembla-inc.assembla.com/spaces/breakout/tickets/35848-some-users-are-shown-as-deleted-on-customer--39-s-space/details"&gt;&lt;/a&gt; &lt;a class="space-name"&gt;Breakout&lt;/a&gt;
+                              &lt;span&gt;for&lt;/span&gt;
+                              &lt;a class="space-name"&gt;SVN&lt;/a&gt;
+                              &lt;span class="success"&gt;has been finished successfully&lt;/span&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr class="navlink"&gt;
+            &lt;td class="hour"&gt;&lt;span&gt;17:23&lt;/span&gt;&lt;/td&gt;
+            &lt;td class="event-type"&gt;
+              &lt;a class="iconSize--s gray" title="" data-icon="&amp;#xe68b" target="_blank"&gt;&lt;/a&gt;
+            &lt;/td&gt;
+            &lt;td class="space-name"&gt;
+                          &lt;span&gt;Automatic Data Backup &lt;/span&gt;
+                              &lt;span&gt;has been initialized by Assembla in&lt;/span&gt;
+                              &lt;a class="itemlink" href="https://assembla-inc.assembla.com/spaces/breakout/tickets/35848-some-users-are-shown-as-deleted-on-customer--39-s-space/details"&gt;&lt;/a&gt; &lt;a class="space-name"&gt;Breakout&lt;/a&gt;
+                              &lt;span&gt;for&lt;/span&gt;
+                              &lt;a class="space-name"&gt;SVN&lt;/a&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+                  &lt;/tbody&gt;</code></span></pre><span><br>
+              <br>
+              <br>
+              Updated draft:<img alt="Screen Shot 2017-08-23 at 12.22.41 PM.png" src="./New main structure_02_files/alvLjMH-0r56_dacwqjQYw"><br>
+              <br>
+              But data-icon works, so adding div is not required. For colors I will send you some atom classes.<br>
+              <a href="http://breakout.tld:3000/profile/gabi-fijalkowska">@gabi-fijalkowska</a></span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1273135443">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 15:23</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1273135443" id="copyButton50"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Marcin Ksiazkiewicz</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span><a href="http://breakout.tld:3000/profile/bartlomiej_skrzyczek">@bartlomiej_skrzyczek</a> we r using thumb up/down for merge votes, so maybe do not duplicate it here<br>
+              <br>
+              <a href="http://breakout.tld:3000/profile/gabi-fijalkowska">@gabi-fijalkowska</a> do we want to show started/ended items seperate or better would be a single item with timestamp</span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1273214533">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <a class="ml-s" href="javascript:%20void(0);" rel="nofollow" title="Edit comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><a class="ml-s link-toNegative" href="javascript:%20void(0);" rel="nofollow" title="Delete comment"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span></a><span class="c-gray--2 ml-s">2017-08-23 16:42</span> <a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1273214533" id="copyButton51"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div></div>
+            </div>
+            <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span>We can check if set xe900 / xe688 would be better. There are not enough icons in the font set.<br>
+              Separating events is a good direction, I will prepare a draft.<br>
+              <a href="http://breakout.tld:3000/profile/kolorowestudio">@kolorowestudio</a></span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1273385773">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 21:22</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1273385773" id="copyButton52"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a>
+              <div></div>
+            </div>
+            <div class="s-self-header bg-soft arrOut-soft comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <div>
+                <div class="commit-comment-header mb-5 fw-6">
+                  <span>updating sass file and draft</span>
+                </div>
+                <div class="commit-comment-footer fs-xs mb-s">
+                  <!-- react-text: 4603 -->Committed to: <!-- /react-text --><span class="fw-6">breakout.bartek:ticket_36067_gabi</span>
+                </div>
+                <div class="fs-xs lh-xxs mb-m c-gray--2 ff-code">
+                  re <a href="http://breakout.tld:3000/spaces/breakout/tickets/36067">#36067</a>
+                </div>
+                <div class="fs-xs lh-xs">
+                  <!-- react-text: 4607 -->In <!-- /react-text --><a href="http://breakout.tld:3000/code/breakout/git-102/commit/bd86deeee4261a5a8f6f8f07e408f663d026ea7b">breakout.bartek:bd86deeee4261a5a8f6f8f07e408f663d026ea7b</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1273393643">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 21:36</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1273393643" id="copyButton53"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/d6FAG-4Aqr5Okcdmr6CpXy_1490028345" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Laith Dahiyat</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span><a href="http://breakout.tld:3000/profile/gabi-fijalkowska">@gabi-fijalkowska</a> <a href="http://breakout.tld:3000/profile/bartlomiej_skrzyczek">@bartlomiej_skrzyczek</a> Is there a way for us to show all the backuyp events in a given timeframe and allow customer to export them? Use case is that an auditor needs to see each backup event for the past 12 months, and be able to print or copy/paste them.</span>
+            </div>
+          </article>
+        </li>
+        <li class="ls-none mb-s" id="comment-1273411593">
+          <article class="u-cf position-relative mb-s pl-xxl">
+            <div class="fs-xxs lh-xxs c-gray-2 float-right">
+              <span class="c-gray--2 ml-s">2017-08-23 22:11</span><a class="ml-3 zeroclipboard" data-clipboard-text="https://assembla-inc.assembla.com/spaces/breakout/tickets/36067/details?comment=1273411593" id="copyButton54"><span aria-hidden="true" class="iconSize--xs mr-5" data-icon=""></span><span class="zeroclipboard-tooltip hover-tooltip-to-left">Copied!</span><span class="hover-tooltip hover-tooltip-to-left">Copy link to this comment</span></a>
+            </div><a class="u-pinTL js-modalTrigger" href="javascript:%20void(0);"><img alt="User picture" class="br-s" height="34px" src="./New main structure_02_files/bTyJAAy4Cr5OkmacwqEsg8_1471372240" width="34px"></a>
+            <div class="u-cf fs-s lh-xs">
+              <span class="fs-xxs">by</span><a class="fs-s ml-3 mr-s fw-6 js-modalTrigger" href="javascript:%20void(0);">Gabriela Fijalkowska</a>
+              <div></div>
+            </div>
+            <div class="null comment u-cf bodyCopy--s mt-sm mb-s ba-1 bc-gray--4 arrOut-white br-l ptb-sm plr-m position-relative">
+              <span><a href="http://breakout.tld:3000/profile/laithd">@laithd</a> I think we can do it.<br>
+              <a href="http://breakout.tld:3000/profile/bartlomiej_skrzyczek">@bartlomiej_skrzyczek</a> - we can discuss tomorrow how UI might look like with the additional functionality.</span>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <div class="u-cf clear-both" id="last_comment"></div>
+      <div class="u-cf ta-right mb-m">
+        <!-- react-empty: 4641 -->
+      </div>
+      <div class="who-is-here-section mb-m visible-sd ml-50">
+        <div>
+          <div class="u-cf mb-s">
+            <h3 class="fw-6 fs-s lh-xs float-left"><a class="link--darkToLight td-noneAll">Who Is Online?</a></h3>
+          </div>
+          <ul class="u-cf">
+            <li class="pa-0 mb-s pr-xl ls-none hover--display position-relative">
+              <a class="display-block ws-nowrap of-hidden to-ellipsis js-modalTrigger" href="javascript:%20void(0);"><span><img alt="User picture" class="br-s va-top mr-5" height="16px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="16px"><!-- react-text: 4189 -->bartlomiej_skrzyczek<!-- /react-text --></span></a>
+              <div class="u-pinTR">
+                <span aria-hidden="true" class="iconSize--xxs ml-5 c-positive" data-icon=""></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div class="textarea-dropzone u-cf position-relative mb-s pl-xxl pa-0--vp-xs" id="leave_a_comment">
+          <div class="u-pinTL mt-2 display-none--vp-xs"><img class="br-s" height="34" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f.png" width="34"></div>
+          <fieldset class="bs-none pa-0">
+            <div class="position-relative textarea-dropzone">
+              <div class="u-cf bg-gray--5 pa-5 brt-m ba-1 bwb-0 bc-gray--4 mt-2">
+                <div class="btnGroup float-left mr-s position-relative">
+                  <a class="btnGroup-item btn--s btn--pressed" tabindex="400" title="Bold text: *Example* (Ctrl + B)"><span aria-hidden="true" class="iconSize--xs" data-icon=""></span></a><a class="btnGroup-item btn--s btn--pressed" tabindex="400" title="Italic text: _Example_ (Ctrl + I)"><span aria-hidden="true" class="iconSize--xs" data-icon=""></span></a><a class="btnGroup-item btn--s btn--pressed" tabindex="400" title="Heading: .h1 Example (Ctrl + 1)"><span aria-hidden="true" class="iconSize--xs" data-icon=""></span></a> <a class="btnGroup-item btn--s btn--pressed" tabindex="400" title="Code block: &lt;pre&gt;&lt;code&gt; example &lt;/code&gt;&lt;/pre&gt; (Ctrl + K)"><span aria-hidden="true" class="iconSize--xs" data-icon=""></span></a><a class="btnGroup-item btn--s btn--pressed" tabindex="400" title="Numeric List Item: # itemA (Ctrl + E)"><span aria-hidden="true" class="iconSize--xs" data-icon=""></span></a> <a class="btnGroup-item btn--s btn--pressed" tabindex="400" title="Bulleted List Item: * itemA (Ctrl + Shift + E)"><span aria-hidden="true" class="iconSize--xs" data-icon=""></span></a>
+                </div>
+                <div class="btnGroup float-left mr-s position-relative" title="Link: [[url:http://www.example.com/|ExampleName]] (Ctrl + L)">
+                  <div class="btn--s btn--pressed">
+                    <span aria-hidden="true" class="iconSize--xs" data-icon=""></span>
+                  </div>
+                  <div class="dropdown-content--left cursor-default ws-normal">
+                    <div class="arrow"></div>
+                    <div class="pt-sm plr-sm pb-s fw-4">
+                      <div class="ws-nowrap">
+                        <input class="input--s mr-s" placeholder="Place link url here..."> <input class="btn--s btn--light" type="button" value="Insert">
+                      </div>
+                    </div>
+                  </div>
+                </div><a class="btnGroup-item btn--s btn--pressed" tabindex="400" title="Show preview"><span aria-hidden="true" class="iconSize--xs" data-icon=""></span></a>
+              </div>
+              <div class="position-relative textarea-dropdown">
+                <textarea class="textarea width-100 mentionable" id="new-comment" placeholder="Type @username to send an instant message to your teammates or else type @team to mention your entire team" rows="5"></textarea>
+                <div>
+                  <div class="position-relative display-block textarea-context brb-m mb-s ptb-7 plr-s bs-solid bw-1 bt-0">
+                    <div>
+                      <span aria-hidden="true" class="iconSize--s position-absolute c-gray--3 va-middle" data-icon=""></span><span class="c-gray--2 display-inlineBlock ml-l"><!-- react-text: 4681 -->Attach files by dragging &amp; dropping, <!-- /react-text --><a>selecting them from your computer</a><span>, pasting from the clipboard</span> <!-- react-text: 4684 -->or <!-- /react-text --><a>more</a></span>
+                    </div>
+                  </div>
+                  <div class="overlay-background position-absolute display-none">
+                    <div class="drophere">
+                      <span aria-hidden="true" class="display-block pb-m iconSize--l" data-icon=""></span><span>Drop files here to upload</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="display-none"></div>
+              </div><input accept="*/*" class="display-none" multiple="" type="file">
+            </div>
+            <div class="mb-s">
+              <input class="btn--s btn--positive is-disabled" type="submit" value="Comment">
+            </div>
+            <div class="fs-xxs c-gray--2">
+              [Ctrl/Cmd] + [Enter]
+            </div>
+          </fieldset>
+          <div class="">
+            <div class="display-inlineBlock float-right" style="position: relative; top: -55px; margin-left: 130px;">
+              <div>
+                <fieldset class="ticket-comment-fieldset wider-labels float-right">
+                  <div class="float-right ml-s">
+                    <label class="display-block fs-xxs lh-xxs c-gray--2 undefined" for="working_hours" title="Work remaining"><!-- react-text: 4922 -->Work remaining <!-- /react-text -->
+                     <!-- react-text: 4923 -->: <!-- /react-text --></label> <input class="input--xs" size="4" style="width: 80px;" type="text">
+                  </div>
+                  <div class="float-right ml-s">
+                    <label class="display-block fs-xxs lh-xxs c-gray--2 undefined" for="resolved_hours" title="Worked hours"><!-- react-text: 4927 -->Worked hours <!-- /react-text -->
+                     <!-- react-text: 4928 -->: <!-- /react-text --></label> <input class="input--xs" size="4" style="width: 80px;" type="text">
+                  </div>
+                </fieldset>
+                <fieldset class="ticket-comment-fieldset float-right">
+                  <div class="float-right ml-s">
+                    <label class="display-block fs-xxs lh-xxs c-gray--2 undefined" for="ticket_status_id" title="Status"><!-- react-text: 4933 -->Status <!-- /react-text -->
+                     <!-- react-text: 4934 -->: <!-- /react-text --></label> <select class="input--xs" style="width: 130px;">
+                      <optgroup label="In progress">
+                        <option value="69184">
+                          New
+                        </option>
+                        <option value="14792753">
+                          Definition
+                        </option>
+                        <option value="14794093">
+                          TakeMe
+                        </option>
+                        <option value="173866">
+                          In-Progress
+                        </option>
+                        <option value="523629">
+                          Review
+                        </option>
+                        <option value="523643">
+                          Pending-Deploy
+                        </option>
+                        <option value="22711543">
+                          Approved
+                        </option>
+                      </optgroup>
+                      <optgroup label="Closed">
+                        <option value="383230">
+                          Invalid
+                        </option>
+                        <option value="487912">
+                          In-Production
+                        </option>
+                      </optgroup>
+                    </select> <!-- react-text: 4947 -->&nbsp; <!-- /react-text -->
+                  </div>
+                  <div class="float-right position-relative">
+                    <label class="display-block fs-xxs lh-xxs c-gray--2">Assigned to:</label>
+                    <div class="position-absolute u-pinAll"></div>
+                    <div class="ba-1 bc-gray--3 br-m fs-xxs lh-xxxs pa-2 pr-s u-truncateText cursor-pointer" style="width: 180px;">
+                      <span><img class="br-s mr-5 va-bottom" height="17px" src="./New main structure_02_files/7-855661baddb92d28e9bfc7609d6b377d.png" title="me (bartlomiej_skrzyczek)" width="17px"><!-- react-text: 4954 -->me (bartlomiej_skrzyczek)<!-- /react-text --></span>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="u-cf mb-m u-hidden" id="attachments-content">
+    <div class="mb-m">
+      <div class="mt-10"></div>
+      <div class="file-attachments drop-zone u-uploadField attachment-tab overlay">
+        <span class="drop-zone-deactivated"></span>
+        <div>
+          <span class="drop-zone-deactivated"><span aria-hidden="true" class="iconSize--s position-absolute c-gray--3 va-middle" data-icon=""></span><span class="c-gray--2 display-inlineBlock ml-l"><!-- react-text: 4963 -->Attach files by dragging &amp; dropping, <!-- /react-text --><a>selecting them from your computer</a><!-- react-text: 4965 --> or <!-- /react-text --><a>more</a></span></span>
+        </div><input accept="*/*" class="display-none" multiple="" type="file">
+      </div>
+    </div>
+    <div class="mt-20">
+      <table class="table table--m disableborder">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Size</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="wb-breakAll ww-breakWord">
+              <a href="http://breakout.tld:3000/spaces/breakout/documents/djxfjQHXyr56DpacwqjQYw/download/djxfjQHXyr56DpacwqjQYw"><span aria-hidden="true" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5" data-icon=""></span><!-- react-text: 4981 -->image.png<!-- /react-text --></a>
+            </td>
+            <td>69 KB</td>
+            <td>
+              <!-- react-text: 4984 -->Added by <!-- /react-text --><a class=" js-modalTrigger" href="javascript:%20void(0);">Marcin Ksiazkiewicz</a> <!-- react-text: 4986 -->on <!-- /react-text -->
+               <!-- react-text: 4987 -->2017-08-22 <!-- /react-text -->
+               <!-- react-text: 4988 -->- <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/djxfjQHXyr56DpacwqjQYw/edit">Upload new version</a>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="wb-breakAll ww-breakWord">
+              <a href="http://breakout.tld:3000/spaces/breakout/documents/cnUOogH3qr54oEacwqjQYw/download/cnUOogH3qr54oEacwqjQYw"><span aria-hidden="true" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5" data-icon=""></span><!-- react-text: 4995 -->Screen Shot 2017-08-22 at 9.56.00 PM.png<!-- /react-text --></a>
+            </td>
+            <td>62.5 KB</td>
+            <td>
+              <!-- react-text: 4998 -->Added by <!-- /react-text --><a class=" js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a> <!-- react-text: 5000 -->on <!-- /react-text -->
+               <!-- react-text: 5001 -->2017-08-22 <!-- /react-text -->
+               <!-- react-text: 5002 -->- <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/cnUOogH3qr54oEacwqjQYw/edit">Upload new version</a>
+            </td>
+            <td>
+              <a class="link--negative" href="javascript:%20void(0)"><span aria-hidden="true" class="iconSize--s" data-icon="" title="Delete this file"></span></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="wb-breakAll ww-breakWord">
+              <a href="http://breakout.tld:3000/spaces/breakout/documents/drmrRgH3qr56u6dmr6QqzO/download/drmrRgH3qr56u6dmr6QqzO"><span aria-hidden="true" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5" data-icon=""></span><!-- react-text: 5011 -->Screen Shot 2017-08-22 at 10.01.58 PM.png<!-- /react-text --></a>
+            </td>
+            <td>101 KB</td>
+            <td>
+              <!-- react-text: 5014 -->Added by <!-- /react-text --><a class=" js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a> <!-- react-text: 5016 -->on <!-- /react-text -->
+               <!-- react-text: 5017 -->2017-08-22 <!-- /react-text -->
+               <!-- react-text: 5018 -->- <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/drmrRgH3qr56u6dmr6QqzO/edit">Upload new version</a>
+            </td>
+            <td>
+              <a class="link--negative" href="javascript:%20void(0)"><span aria-hidden="true" class="iconSize--s" data-icon="" title="Delete this file"></span></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="wb-breakAll ww-breakWord">
+              <a href="http://breakout.tld:3000/spaces/breakout/documents/d0se1aH3qr54o-dmr6CpXy/download/d0se1aH3qr54o-dmr6CpXy"><span aria-hidden="true" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5" data-icon=""></span><!-- react-text: 5027 -->Screen Shot 2017-08-22 at 10.03.04 PM.png<!-- /react-text --></a>
+            </td>
+            <td>65 KB</td>
+            <td>
+              <!-- react-text: 5030 -->Added by <!-- /react-text --><a class=" js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a> <!-- react-text: 5032 -->on <!-- /react-text -->
+               <!-- react-text: 5033 -->2017-08-22 <!-- /react-text -->
+               <!-- react-text: 5034 -->- <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/d0se1aH3qr54o-dmr6CpXy/edit">Upload new version</a>
+            </td>
+            <td>
+              <a class="link--negative" href="javascript:%20void(0)"><span aria-hidden="true" class="iconSize--s" data-icon="" title="Delete this file"></span></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="wb-breakAll ww-breakWord">
+              <a href="http://breakout.tld:3000/spaces/breakout/documents/bUwnv0H-Wr568pacwqEsg8/download/bUwnv0H-Wr568pacwqEsg8"><span aria-hidden="true" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5" data-icon=""></span><!-- react-text: 5043 -->Screen Shot 2017-08-23 at 12.18.13 PM.png<!-- /react-text --></a>
+            </td>
+            <td>120 KB</td>
+            <td>
+              <!-- react-text: 5046 -->Added by <!-- /react-text --><a class=" js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a> <!-- react-text: 5048 -->on <!-- /react-text -->
+               <!-- react-text: 5049 -->2017-08-23 <!-- /react-text -->
+               <!-- react-text: 5050 -->- <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/bUwnv0H-Wr568pacwqEsg8/edit">Upload new version</a>
+            </td>
+            <td>
+              <a class="link--negative" href="javascript:%20void(0)"><span aria-hidden="true" class="iconSize--s" data-icon="" title="Delete this file"></span></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="wb-breakAll ww-breakWord">
+              <a href="http://breakout.tld:3000/spaces/breakout/documents/alvLjMH-0r56_dacwqjQYw/download/alvLjMH-0r56_dacwqjQYw"><span aria-hidden="true" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5" data-icon=""></span><!-- react-text: 5059 -->Screen Shot 2017-08-23 at 12.22.41 PM.png<!-- /react-text --></a>
+            </td>
+            <td>88.8 KB</td>
+            <td>
+              <!-- react-text: 5062 -->Added by <!-- /react-text --><a class=" js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a> <!-- react-text: 5064 -->on <!-- /react-text -->
+               <!-- react-text: 5065 -->2017-08-23 <!-- /react-text -->
+               <!-- react-text: 5066 -->- <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/alvLjMH-0r56_dacwqjQYw/edit">Upload new version</a>
+            </td>
+            <td>
+              <a class="link--negative" href="javascript:%20void(0)"><span aria-hidden="true" class="iconSize--s" data-icon="" title="Delete this file"></span></a>
+            </td>
+          </tr>
+          <tr>
+            <td class="wb-breakAll ww-breakWord">
+              <a href="http://breakout.tld:3000/spaces/breakout/documents/azV8MaIj0r547ddmr6CpXy/download/azV8MaIj0r547ddmr6CpXy"><span aria-hidden="true" class="c-gray--3 mr-3 iconSize--s float-left mr-s mb-5" data-icon=""></span><!-- react-text: 5075 -->Screen Shot 2017-08-24 at 9.22.58 AM.png<!-- /react-text --></a>
+            </td>
+            <td>244 KB</td>
+            <td>
+              <!-- react-text: 5078 -->Added by <!-- /react-text --><a class=" js-modalTrigger" href="javascript:%20void(0);">bartlomiej_skrzyczek</a> <!-- react-text: 5080 -->on <!-- /react-text -->
+               <!-- react-text: 5081 -->2017-08-24 <!-- /react-text -->
+               <!-- react-text: 5082 -->- <!-- /react-text --><a href="http://breakout.tld:3000/spaces/breakout/documents/azV8MaIj0r547ddmr6CpXy/edit">Upload new version</a>
+            </td>
+            <td>
+              <a class="link--negative" href="javascript:%20void(0)"><span aria-hidden="true" class="iconSize--s" data-icon="" title="Delete this file"></span></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="u-cf mb-m u-hidden" id="associations-content">
+    <div class="u-cf mb-m">
+      <div class="section" id="associations">
+        <div>
+          <div class="u-cf mb-m ptb-s plr-sm br-m fs-xs lh-xxs bg-positive u-hidden">
+            <span aria-hidden="true" class="iconSize--s mr-5" data-icon=""></span> <!-- react-text: 5093 -->This is an <!-- /react-text --><strong>Epic</strong> <!-- react-text: 5095 -->. It is a container for child stories. Each story can be finished at a different time. <!-- /react-text --><a class="float-right" href="https://support.assembla.com/hc/en-us/sections/205020268-Tickets" target="_blank"><span aria-hidden="true" class="iconSize--s mr-5" data-icon=""></span><!-- react-text: 5098 -->Learn more<!-- /react-text --></a>
+          </div>
+          <div class="u-cf mb-m ptb-s plr-sm br-m fs-xs lh-xxs bg-warning--l u-hidden">
+            <span aria-hidden="true" class="iconSize--s mr-5" data-icon=""></span> <!-- react-text: 5101 -->This is a <!-- /react-text --><strong>Story</strong> <!-- react-text: 5103 -->. It can contain subtasks and bug reports, which are all finished and released at the same time <!-- /react-text --><a class="float-right" href="https://support.assembla.com/hc/en-us/sections/205020268-Tickets" target="_blank"><span aria-hidden="true" class="iconSize--s mr-5" data-icon=""></span><!-- react-text: 5106 -->Learn more<!-- /react-text --></a>
+          </div>
+          <div class="u-cf mb-m ptb-s plr-sm br-m fs-xs lh-xxs bg-soft">
+            <!-- react-text: 5108 -->This is a <!-- /react-text --><strong>Subtask</strong> <!-- react-text: 5110 -->. It is part of its parent story. <!-- /react-text --><a class="float-right" href="https://support.assembla.com/hc/en-us/sections/205020268-Tickets" target="_blank"><span aria-hidden="true" class="iconSize--s mr-5" data-icon=""></span><!-- react-text: 5113 -->Learn more<!-- /react-text --></a>
+          </div>
+        </div><a class="float-right mt-5 u-hidden" href="javascript:%20void(0);">Add a relation</a>
+        <h3 class="fw-6 fs-m lh-m mb-m">Related tickets</h3>
+        <div class="pt-s plr-sm ba-1 bc-gray--4 br-m bg-gray--5">
+          <div class="u-cf mb-s">
+            <h3 class="fw-6 fs-m lh-m mb-s">Relate to an existing ticket</h3>
+            <form action="http://breakout.tld:3000/spaces/breakout/tickets/36067/details/associations" class="s-form s-inline-form">
+              <div class="display-inlineBlock mr-m mb-5">
+                <label class="display-block fs-xxs lh-xxs c-gray--2">Space</label> <select class="input--s" style="width: 130px;">
+                  <option value="bFuRawB8Sr5OoTdmr6bg7m">
+                    Assembla-design-team
+                  </option>
+                  <option value="dmFzMcouOr553cacwqjQXA">
+                    Assembla-ux
+                  </option>
+                  <option value="az0vdOMSWr5Rj6acwqjQXA">
+                    Assembla-2-0
+                  </option>
+                  <option value="bFpMJQCsKr5Ry3acwqjQXA">
+                    Bartlomiej-skrzyczek
+                  </option>
+                  <option value="b6nRoCPC0r2Oq0aaeP0Qfc">
+                    Breakout
+                  </option>
+                  <option value="c1rJKE27ur3zn3ab7jnrAJ">
+                    Breakout-control
+                  </option>
+                  <option value="dkmTlkBF8r55Oudmr6QqzO">
+                    John-s-test-space
+                  </option>
+                  <option value="ctNz0ggbCr5Ok9dmr6QqzO">
+                    New-space-portfolio
+                  </option>
+                  <option value="cqxBO6HW0r5Qdddmr6QqzO">
+                    Neww
+                  </option>
+                  <option value="d9dX2SX3qr5OVcacwqjQXA">
+                    Portfolio
+                  </option>
+                  <option value="bzU-hgBImr5P3dacwqEsg8">
+                    Breakout-gravity
+                  </option>
+                  <option value="aItYs-7Eqr5Pfldmr6bg7m">
+                    Qualaroo
+                  </option>
+                  <option value="cLGRlSBC4r5Rxcdmr6QqzO">
+                    Space
+                  </option>
+                  <option value="bsPV7oHLCr5PiXacwqEsg8">
+                    Test-space-test
+                  </option>
+                  <option value="c95tHWLQGr5OymacwqjQYw">
+                    Time-space
+                  </option>
+                  <option value="cHMrU48XWr5iXQdmr6bg7m">
+                    Ui-test
+                  </option>
+                  <option value="cQSXwYHVWr5RpcacwqjQYw">
+                    We
+                  </option>
+                  <option value="b0HxWmCZur54mLacwqjQYw">
+                    Website-2-0
+                  </option>
+                </select>
+              </div>
+              <div class="display-inlineBlock mr-m mb-5">
+                <label class="display-block fs-xxs lh-xxs c-gray--2">Ticket name</label> <input aria-autocomplete="list" aria-haspopup="true" autocomplete="off" class="input--s" placeholder="Search by ticket number or summary" size="50" style="" type="text"><span class="ml-5">is:</span>
+              </div>
+              <ul class="ui-autocomplete auto-list u-maxWidth--100" style="width: 12px; top: auto; left: 0px;"></ul>
+              <div class="display-inlineBlock mr-m mb-5">
+                <label class="display-block fs-xxs lh-xxs c-gray--2">Relation</label> <select class="input--s" style="width: 130px;">
+                  <option value="2">
+                    Related
+                  </option>
+                  <option value="3">
+                    Duplicated
+                  </option>
+                  <option value="7">
+                    Before
+                  </option>
+                  <option value="8">
+                    After
+                  </option>
+                </select>
+              </div>
+              <div class="display-inlineBlock mr-m mb-5">
+                <input class="btn--s btn--light" id="associate-button" type="submit" value="Relate">
+              </div>
+            </form>
+          </div>
+          <hr class="bb-1 bc-gray--4 mb-s">
+          <div class="u-cf mb-s">
+            <h3 class="fw-6 fs-m lh-m mb-s">Relate to a new ticket</h3>
+            <div class="display-inlineBlock mr-m mb-5">
+              <label class="display-block fs-xxs lh-xxs c-gray--2">Add as</label> <select class="input--s" style="width: 130px;">
+                <option value="2">
+                  Related
+                </option>
+                <option value="3">
+                  Duplicated
+                </option>
+                <option value="7">
+                  Before
+                </option>
+                <option value="8">
+                  After
+                </option>
+              </select>
+            </div><input class="btn--s btn--light" type="button" value="Create new related ticket">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-cf mb-m">
+      <div class="content">
+        <div class="related-tickets-wrapper">
+          <ul class="pa-0">
+            <li class="ls-none pa-0 u-cf">
+              <div class="u-cf fs-s lh-xs pt-s mb-s bt-1 bc-gray--4">
+                <span class="display-inlineBlock va-middle mr-5"><a class="u-followingStar float-left mr-8 link--lighterToLight"><span aria-hidden="true" class="iconSize--s" data-icon=""></span></a></span> <span class="fs-xxs lh-xxs plr-4 mr-5 bg-gray--4 c-gray--1 br-m td-none display-inlineBlock va-middle"><!-- react-text: 5176 -->#<!-- /react-text --><!-- react-text: 5177 -->35889<!-- /react-text --></span><span class="fs-xxs lh-xxs plr-4 mr-5 bg-gray--4 c-gray--1 br-m td-none display-inlineBlock va-middle">In-Progress</span>
+                <div class="float-right fs-xs ml-s pt-2">
+                  <span class=" fw-6 mr-s link--darkToLight" style="cursor: pointer;" title="Click to change"><!-- react-text: 5181 -->Parent Story<!-- /react-text --><span aria-hidden="true" class="iconSize--xs" data-icon=""></span></span> <select class="hidden u-hidden">
+                    <option value="0">
+                      Parent Story
+                    </option>
+                    <option value="2">
+                      Related
+                    </option>
+                    <option value="3">
+                      Duplicated
+                    </option>
+                    <option value="7">
+                      Before
+                    </option>
+                    <option value="8">
+                      After
+                    </option>
+                  </select><a class="link--lightToLighter ml-5"><span aria-hidden="true" class="context-menu-gear iconSize--s" data-icon=""></span></a><a class="link--lightToLighter ml-5" title="Remove relation"><span aria-hidden="true" class="iconSize--s" data-icon=""></span></a>
+                </div><a class="display-inline va-middle" href="http://breakout.tld:3000/spaces/breakout/tickets/35889-backup-success-failure-audit-reports-/details">Backup Success/Failure Audit Reports</a>
+              </div>
+              <ul class="u-cf pl-m"></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="u-cf mb-m" id="followers-content">
+    <div class="u-cf mb-m">
+      <div class="pt-s plr-sm ba-1 bc-gray--4 br-m bg-gray--5">
+        <h3 class="fw-6 fs-s lh-xxs mb-s">Add people from your space or portfolio to follow this ticket</h3>
+        <form action="http://breakout.tld:3000/spaces/breakout/tickets/36067/details/followers/follow" class="s-form">
+          <div class="display-inlineBlock mr-m mb-s">
+            <label class="display-block fs-xxs lh-xxs c-gray--2">User names</label> <input autocomplete="off" class="input--s GINGER_SOFTWARE_control" id="display-list-of-following-users" size="50" spellcheck="false" style="background-repeat: no-repeat !important; background-attachment: local !important; background-position: 6px 6px !important; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAAAaCAYAAADFRYunAAAA1klEQVR4Xu3UAREAAAgCMelf2iA/GzA8do4AAQIhgYWyikqAAIEzep6AAIGUgNFL1S0sAQJGzw8QIJASMHqpuoUlQMDo+QECBFICRi9Vt7AECBg9P0CAQErA6KXqFpYAAaPnBwgQSAkYvVTdwhIgYPT8AAECKQGjl6pbWAIEjJ4fIEAgJWD0UnULS4CA0fMDBAikBIxeqm5hCRAwen6AAIGUgNFL1S0sAQJGzw8QIJASMHqpuoUlQMDo+QECBFICRi9Vt7AECBg9P0CAQErA6KXqFpYAgQdNNgAbc7F1LQAAAABJRU5ErkJggg==&quot;) !important; position: relative; font-size: 12px; white-space: pre-wrap;" type="text">
+            <div class="searchable-field u-unpinTop u-unpinLeft" id="hook-followers-dropdown-list" style="z-index: 3; display: none;">
+              <div class="searchable-field-context">
+                <ul class="ls-none td-none m-0">
+                  <li class="pr-l pl-sm ptb-5 position-relative td-noneAll u-cf"><span class="fw-6 c-gray--2 fs-xxs">Space members</span></li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Aleksandra_Ozdoba" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/ae6wDGXB8r5Pj4acwqjQXA_1486153750_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      (me) Aleksandra_Ozdoba
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      Aleksandra_Ozdoba
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <span aria-hidden="true" class="user-checked u-pinTop--50 mnt-s pt-1 c-gray--2 mr-s position-absolute iconSize--s u-pinRight" data-icon=""></span><img alt="(alexandra@gmail.com)" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/7-855661baddb92d28e9bfc7609d6b377d.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      alexandra@gmail.com
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      Pending
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Amanda Pinchbeck" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/8-6a3682b049e7c54127bfc0a153ff3a22.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Amanda Pinchbeck
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      amandap
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Andrei Cuşnir" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/dwrwWMOm0r3iyDabIlDkbG_1422169959_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Andrei Cuşnir
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      andrei
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="(bartlomiej_skrzyczek)" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/7-855661baddb92d28e9bfc7609d6b377d.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      bartlomiej_skrzyczek
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      bartlomiej_skrzyczek
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Gabriela Fijalkowska" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/bTyJAAy4Cr5OkmacwqEsg8_1471372240_small" width="26px"> <span aria-hidden="true" class="user-checked u-pinTop--50 mnt-s pt-1 c-gray--2 mr-s position-absolute iconSize--s u-pinRight" data-icon=""></span>
+                    <div class="searchable-name u-truncateText">
+                      Gabriela Fijalkowska
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      gabi-fijalkowska
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Laith Dahiyat" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/d6FAG-4Aqr5Okcdmr6CpXy_1490028345_small" width="26px"> <span aria-hidden="true" class="user-checked u-pinTop--50 mnt-s pt-1 c-gray--2 mr-s position-absolute iconSize--s u-pinRight" data-icon=""></span>
+                    <div class="searchable-name u-truncateText">
+                      Laith Dahiyat
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      laithd
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Marcin Ksiazkiewicz" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/dAiMh02ver5lZdacwqjQYw_1464170510_small" width="26px"> <span aria-hidden="true" class="user-checked u-pinTop--50 mnt-s pt-1 c-gray--2 mr-s position-absolute iconSize--s u-pinRight" data-icon=""></span>
+                    <div class="searchable-name u-truncateText">
+                      Marcin Ksiazkiewicz
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      kolorowestudio
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 position-relative td-noneAll u-cf"><span class="fw-6 c-gray--2 fs-xxs">Portfolio members</span></li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="angela.bartels" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/cFNzvwvdSr5OWzacwqEsg8_1486673692_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      angela.bartels
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      angela.bartels
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Artur Kremens" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/cq3fSICkar5kddacwqEsg8_1484670606_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Artur Kremens
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      artur.kremens
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Bartosz Perlak" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/5-0123c7bbf16ef8c49a3c581106f73a7e.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Bartosz Perlak
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      bartoszperlak
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Christine Cremonni" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/cS_mdoPrer5OZcdmr6bg7m_1478541080_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Christine Cremonni
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      ccremonni
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Chrissie16" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/11-356867cc35912a8b334bf2c099408ccf.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Chrissie16
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      Chrissie16
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Damian Szymański" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/bTVhveczer5ikWdmr6bg7m_1422075782_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Damian Szymański
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      damianszymanski
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="David Romoff" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/c_EC3K0DCr5RyUdmr6QqzO_1483476713_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      David Romoff
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      david
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Ed Byrne" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/b03ab26a6f224af7b8b4b9368698f98d.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Ed Byrne
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      EdByrne210
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="gravitational" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/dBf2nmnnir5RZcdmr6CpXy_1466199370_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      gravitational
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      gravitational
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Ghulam Shabbir" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/a4JSdcHcmr36NOeJe5cbCb_1422023584_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Ghulam Shabbir
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      gshabbir
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Jacek Materna" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/a4i1R-eTGr5POrdmr6QqzO_1489604707_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Jacek Materna
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      jacek.materna
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Jakub Bajorek" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/8-6a3682b049e7c54127bfc0a153ff3a22.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Jakub Bajorek
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      jakub.bajorek
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Jakub Mikrut" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/d3hu0yLear5Ooidmr6CpXy_1477553364_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Jakub Mikrut
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      jakub89119
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Jess Garza" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/12-411b0a47c6e7511fbd678d50e77b7c1a.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Jess Garza
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      jessgarza
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="jheeschen" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/5-0123c7bbf16ef8c49a3c581106f73a7e(1).png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      jheeschen
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      jheeschen
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="John Dimou" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/cd0rEG8Rqr5ytdacwqEsg8_1478213938_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      John Dimou
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      Johndimou
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="jonathan stovall" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/cThYs6stir5RddacwqEsg8_1468521113_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      jonathan stovall
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      jonstovall
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Julian Foad" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/bzBSwWtb4r573cacwqjQXA_1497257427_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Julian Foad
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      julianfoad
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Konrad Zuwała" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/8-6a3682b049e7c54127bfc0a153ff3a22(1).png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Konrad Zuwała
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      konrad.zuwala
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Michelle Marek" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/8-6a3682b049e7c54127bfc0a153ff3a22(2).png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Michelle Marek
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      michelle.marek
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Mr. Andrew Jenkins" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/azc2fw0uWr4zsKacwqjQXA_1422057305_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Mr. Andrew Jenkins
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      Mr.Jenkins
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Matthew Theiss" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/axqpkwcbur54kSdmr6CpXy_1490046813_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Matthew Theiss
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      mtheiss
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Sergey Nazarov" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/c85f-412ur35WReJe5cbLA_1431738140_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Sergey Nazarov
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      natarajaya
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Nick Honegger" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/bZZFQkb_mr55qaacwqjQXA_1501169563_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Nick Honegger
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      nickhonegger
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="paullynch" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/5-0123c7bbf16ef8c49a3c581106f73a7e.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      paullynch
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      paullynch
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Pavel Dotsulenko" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/cR-zrawPOr5l7cacwqjQWU_1473885258_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Pavel Dotsulenko
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      pavel.d
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Przemysław Łukasik" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/dq1A0-6fer5OoNacwqjQYw_1488403928_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Przemysław Łukasik
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      plukasik
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Ruben Dominguez" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/3-0879b3fae9f60d6eebf75877973523dc.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Ruben Dominguez
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      rubdom
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Sarah Cantu" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/aOCZ9wudyr57Kxdmr6CpXy_1501787313_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Sarah Cantu
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      sarahcantu
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Sergiy Golub" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/acmTsONqyr4lOQeJe4gwI3_1463693696_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Sergiy Golub
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      sergiy_golub
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Stanislav Kolotinskiy" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/aHAur6WCir4l0leJe5cbLr_1422031052_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Stanislav Kolotinskiy
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      skolotinskiy
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Todd Morey" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/9-3762a8f68b37c1227b069de0017dd43f.png" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Todd Morey
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      toddmorey
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Vadim Todorov" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/aLhmG8-8Wr4j6uacwqjQWU_1422033761_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Vadim Todorov
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      tofir
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Toshi Dávila Chinen" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/aIING2b5Sr4QIXacwqjQWU_1422031712_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Toshi Dávila Chinen
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      Toshidavila
+                    </div>
+                  </li>
+                  <li class="pr-l pl-sm ptb-5 cursor-pointer bg-onHover--5 bg-onFocus--5 position-relative td-noneAll u-cf">
+                    <img alt="Wojciech Lazar" class="float-left mt-3 mr-s br-m" height="26px" src="./New main structure_02_files/cyjATCfOWr5OosacwqjQYw_1485178979_small" width="26px">
+                    <div class="searchable-name u-truncateText">
+                      Wojciech Lazar
+                    </div>
+                    <div class="c-gray--2 fs-xxs lh-xxxs u-truncateText">
+                      wlojtek
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bt-1 bc-gray--4">
+                <a class="float-left pa-s fs-xxs" href="javascript:%20void(0);">Invite new user</a> <a class="float-right pa-s fs-xxs" href="http://breakout.tld:3000/styleguide/drafts/draft_quick_invite_general_view_follow_ticket.html" target="_blank">Manage users</a>
+              </div>
+            </div>
+          </div>
+          <div class="fs-xxs lh-xxs c-gray--2 mb-s">
+            Multiple users can be added by selecting them in dropdown list.
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="u-cf mb-m">
+      <h3 class="fw-6 fs-s lh-xxs mb-m">Followers</h3>
+      <ul class="pa-0" id="followers-list">
+        <li class="ls-none pb-s mb-s bb-1 bc-gray--4">
+          <a class=" js-modalTrigger" href="javascript:%20void(0);"><span><img alt="User picture" class="br-s va-middle mr-s" height="16px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f(1).png" width="16px"><!-- react-text: 5304 -->alexandra@gmail.com<!-- /react-text --></span></a>
+        </li>
+        <li class="ls-none pb-s mb-s bb-1 bc-gray--4">
+          <a class=" js-modalTrigger" href="javascript:%20void(0);"><span><img alt="User picture" class="br-s va-middle mr-s" height="16px" src="./New main structure_02_files/bTyJAAy4Cr5OkmacwqEsg8_1471372240" width="16px"><!-- react-text: 5309 -->Gabriela Fijalkowska<!-- /react-text --></span></a>
+          <div class="float-right fs-xs">
+            <a class="link--lightToLighter" title="Remove follower"><span aria-hidden="true" class="iconSize--s lh-xs" data-icon=""></span></a>
+          </div>
+        </li>
+        <li class="ls-none pb-s mb-s bb-1 bc-gray--4">
+          <a class=" js-modalTrigger" href="javascript:%20void(0);"><span><img alt="User picture" class="br-s va-middle mr-s" height="16px" src="./New main structure_02_files/d6FAG-4Aqr5Okcdmr6CpXy_1490028345" width="16px"><!-- react-text: 5317 -->Laith Dahiyat<!-- /react-text --></span></a>
+          <div class="float-right fs-xs">
+            <a class="link--lightToLighter" title="Remove follower"><span aria-hidden="true" class="iconSize--s lh-xs" data-icon=""></span></a>
+          </div>
+        </li>
+        <li class="ls-none pb-s mb-s bb-1 bc-gray--4">
+          <a class=" js-modalTrigger" href="javascript:%20void(0);"><span><img alt="User picture" class="br-s va-middle mr-s" height="16px" src="./New main structure_02_files/dAiMh02ver5lZdacwqjQYw_1464170510" width="16px"><!-- react-text: 5325 -->Marcin Ksiazkiewicz<!-- /react-text --></span></a>
+          <div class="float-right fs-xs">
+            <a class="link--lightToLighter" title="Remove follower"><span aria-hidden="true" class="iconSize--s lh-xs" data-icon=""></span></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="fs-xxs lh-xxs pt-5 mt-5 pb-2 pl-s bl-3 bc-gray--4">
+      <!-- react-text: 5330 -->Followers will receive email updates about new ticket activity or emails sent to <!-- /react-text --><a href="mailto:breakout+36067@tickets.assembla.com">breakout+36067@tickets.assembla.com</a>
+    </div>
+  </div>
+  <div class="u-cf mb-m u-hidden" id="merge-requests-content">
+    <table class="mb-xl ws-nowrap width-100">
+      <tbody>
+        <tr class="bg-onHover--6 bb-1 bc-gray--4 display-block--vp-n">
+          <td class="plr-sm ptb-sm ba-0 width-100 display-block--vp-n bb-1 bc-gray--4 ba-0--vp-n">
+            <div class="u-cf position-relative ws-normal pl-xxl">
+              <a class=" js-modalTrigger" href="javascript:%20void(0);"><img class="br-s mt-3 u-pinTL" height="36px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f(1).png" width="36px"></a>
+              <div class="u-cf fs-s lh-xs mb-5">
+                <span class="u-followingStar float-left mr-8 c-rose"><span aria-hidden="true" class="iconSize--s" data-icon=""></span></span><a class="fw-6" href="http://breakout.tld:3000/spaces/breakout/git/merge_requests/5374633">Setup processor, views and controllers for the feature - Repositories Backup ...</a>
+              </div>
+              <div class="u-cf c-gray--2 fs-xxs lh-xxs">
+                <span class="mr-m"><!-- react-text: 5346 -->by <!-- /react-text --><a class=" js-modalTrigger" href="javascript:%20void(0);"><span class="link--lightToLighter td-underline">bartlomiej_skrzyczek</span></a></span> <span class="mr-m"><!-- react-text: 5350 -->from <!-- /react-text --><a class="link--lightToLighter td-underline" href="http://breakout.tld:3000/spaces/breakout/git-102/source/ticket_36067_gabi">breakout.bartek:ticket_36067_gabi</a></span><span class="mr-m"><!-- react-text: 5353 -->to <!-- /react-text --><a class="link--lightToLighter td-underline" href="http://breakout.tld:3000/spaces/breakout/git/source/master">breakout:master</a></span> <span class="mr-m"><!-- react-text: 5356 -->tickets <!-- /react-text -->
+                 <!-- react-empty: 5357 --></span>
+              </div>
+            </div>
+          </td>
+          <td class="plr-sm ptb-sm c-gray--2 display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n">2017-08-23 21:23</td>
+          <td class="plr-sm ptb-sm display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n"><span class="ptb-2 plr-5 mr-s br-m c-white fw-4 bg-gray--1">Open</span></td>
+          <td class="plr-sm ptb-sm c-gray--2 display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n">2017-08-23 21:50</td>
+          <td class="plr-sm ptb-sm c-gray--2 display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n"><span aria-hidden="true" class="iconSize--s mr-5" data-icon=""></span> <!-- react-text: 5364 -->
+           <!-- /react-text -->
+           <!-- react-text: 5365 -->2 <!-- /react-text --></td>
+          <td class="plr-sm ptb-sm display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n c-gray--2"><span aria-hidden="true" class="iconSize--s mr-5" data-icon=""></span> <!-- react-text: 5368 -->
+           <!-- /react-text -->
+           <!-- react-text: 5369 -->1 <!-- /react-text --></td>
+          <td class="plr-sm ptb-sm display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n ta-right c-gray--2"><span><span class="pr-5"><span aria-hidden="true" class="iconSize--s c-positive" data-icon=""></span> <!-- react-text: 5374 -->
+           <!-- /react-text -->
+           <!-- react-text: 5375 -->0 <!-- /react-text --></span> <span class="pr-5"><span aria-hidden="true" class="iconSize--s c-negative" data-icon=""></span> <!-- react-text: 5378 -->
+           <!-- /react-text -->
+           <!-- react-text: 5379 -->0 <!-- /react-text --></span></span></td>
+        </tr>
+        <tr class="bg-onHover--6 bb-1 bc-gray--4 display-block--vp-n">
+          <td class="plr-sm ptb-sm ba-0 width-100 display-block--vp-n bb-1 bc-gray--4 ba-0--vp-n">
+            <div class="u-cf position-relative ws-normal pl-xxl">
+              <a class=" js-modalTrigger" href="javascript:%20void(0);"><img class="br-s mt-3 u-pinTL" height="36px" src="./New main structure_02_files/7-1fbb97d7c440c8894d25f3af8b009c3f(1).png" width="36px"></a>
+              <div class="u-cf fs-s lh-xs mb-5">
+                <span class="u-followingStar float-left mr-8 c-rose"><span aria-hidden="true" class="iconSize--s" data-icon=""></span></span><a class="fw-6" href="http://breakout.tld:3000/spaces/breakout/git/merge_requests/5365213">adding a new section to admin panel</a>
+              </div>
+              <div class="u-cf c-gray--2 fs-xxs lh-xxs">
+                <span class="mr-m"><!-- react-text: 5391 -->by <!-- /react-text --><a class=" js-modalTrigger" href="javascript:%20void(0);"><span class="link--lightToLighter td-underline">bartlomiej_skrzyczek</span></a></span> <span class="mr-m"><!-- react-text: 5395 -->from <!-- /react-text --><a class="link--lightToLighter td-underline" href="http://breakout.tld:3000/spaces/breakout/git-102/source/ticket_36067">breakout.bartek:ticket_36067</a></span><span class="mr-m"><!-- react-text: 5398 -->to <!-- /react-text --><a class="link--lightToLighter td-underline" href="http://breakout.tld:3000/spaces/breakout/git/source/master">breakout:master</a></span> <span class="mr-m"><!-- react-text: 5401 -->tickets <!-- /react-text -->
+                 <!-- react-empty: 5402 --></span>
+              </div>
+            </div>
+          </td>
+          <td class="plr-sm ptb-sm c-gray--2 display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n">2017-08-22 14:18</td>
+          <td class="plr-sm ptb-sm display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n"><span class="ptb-2 plr-5 mr-s br-m c-white fw-4 bg-gray--1">Open</span></td>
+          <td class="plr-sm ptb-sm c-gray--2 display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n">2017-08-22 22:19</td>
+          <td class="plr-sm ptb-sm c-gray--2 display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n"><span aria-hidden="true" class="iconSize--s mr-5" data-icon=""></span> <!-- react-text: 5409 -->
+           <!-- /react-text -->
+           <!-- react-text: 5410 -->4 <!-- /react-text --></td>
+          <td class="plr-sm ptb-sm display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n c-gray--2"><span aria-hidden="true" class="iconSize--s mr-5" data-icon=""></span> <!-- react-text: 5413 -->
+           <!-- /react-text -->
+           <!-- react-text: 5414 -->2 <!-- /react-text --></td>
+          <td class="plr-sm ptb-sm display-inlineBlock--vp-n bb-1 bc-gray--4 ba-0--vp-n ta-right c-gray--2"><span><span class="pr-5"><span aria-hidden="true" class="iconSize--s c-positive" data-icon=""></span> <!-- react-text: 5419 -->
+           <!-- /react-text -->
+           <!-- react-text: 5420 -->+1 <!-- /react-text --></span> <span class="pr-5"><span aria-hidden="true" class="iconSize--s c-negative" data-icon=""></span> <!-- react-text: 5423 -->
+           <!-- /react-text -->
+           <!-- react-text: 5424 -->0 <!-- /react-text --></span></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="u-cf mb-m u-hidden" id="time-content">
+    <div class="u-cf mb-m">
+      <div class="u-row mb-m mnl-l mnr-l">
+        <div class="width-50 width-100--vp-s plr-l">
+          <label class="display-block fs-xxs lh-xxs c-gray--2">Worked hours</label>
+          <div class="plr-s ptb-5 mb-s br-m ba-1 bc-gray--4 bg-gray--5">
+            <div class="fs-xl lh-l">
+              0.00
+            </div>
+          </div>
+          <div class="u-cf mb-m">
+            <form action="http://breakout.tld:3000/spaces/breakout/tickets/36067/details/time/update_invested">
+              <input class="input--m mr-5" size="4" type="text"> <input class="btn--m btn--light mr-5" type="submit" value="Add"><span class="c-gray--2 fs-xxs lh-xxs">Add only time invested by you</span>
+            </form>
+          </div>
+          <div class="u-cf mb-m"></div>
+        </div>
+        <div class="width-50 width-100--vp-s plr-l">
+          <div>
+            <div>
+              <label class="display-block fs-xxs lh-xxs c-gray--2">Work Hours Remaining</label>
+              <div class="plr-s ptb-5 mb-s br-m ba-1 bc-gray--4 bg-gray--5">
+                <div class="fs-xl lh-l">
+                  -
+                </div>
+              </div>
+            </div>
+            <div class="u-cf mb-m">
+              <form action="http://breakout.tld:3000/spaces/breakout/tickets/36067/details/time/update_remaining">
+                <input class="input--m mr-5" size="4" type="text"> <input class="btn--m btn--light mr-5" type="submit" value="Update"><span class="c-gray--2 fs-xxs lh-xxs">Update remaining estimate</span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script id="wappalyzer" src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/inject.js"></script><iframe width="0" height="0" frameborder="0" src="./New main structure_02_files/saved_resource.html" style="border: 0px solid; display: none; position: absolute; z-index: 2147483647; height: 0px; width: 0px; background-color: transparent;" id="GINGER_SOFTWARE_bubblesIFrame" scrolling="no"></iframe><div id="GingerWidgetInfo" style="display:none;">{"version":"0.1.0.627","isExtension":true,"extensionName":"Chrome"}</div></body><script>(function(){(function (){
+            //Todo:is injection needed here?
+            var eventRegister = {};
+
+            var findReactProp = function(elem){
+                for(var key in elem){
+                    if(key.indexOf("__reactInternalInstance")===0){
+                        //var p = null;
+                        //if(elem[key].memoizedProps){
+                        //    p = elem[key].memoizedProps;
+                        //} else if(elem[key]._currentElement){
+                        //    p = elem[key]._currentElement.props
+                        //}
+
+                        //TODO: report if props is not found with Facebook version
+                        return (elem[key].memoizedProps || elem[key]._currentElement.props);
+                    }
+                }
+                return null;
+            };
+
+            document.addEventListener("gingerModule-eventEmitter-react-fire",function(e){
+                //console.log("firing", e);
+                var reactProps = findReactProp(document.activeElement);
+                var eventName = e.detail.event;
+                var eventParams = e.detail.params || {};
+                eventParams.preventDefault = function(){};
+                if(reactProps && eventName) {
+                    reactProps[eventName](eventParams);
+                }
+            });
+            document.addEventListener("gingerModule-eventEmitter-onselect",function(e){
+                var reactProps = findReactProp(document.activeElement);
+                //trigger("select");
+                if(reactProps) {
+                    reactProps.onSelect();
+                }
+            });
+            document.addEventListener("gingerModule-eventEmitter-onpaste",function(e){
+                var reactProps = findReactProp(document.activeElement);
+                var pasteObj = {
+                    defaultPrevented: false,
+                    target: document.activeElement,
+                    preventDefault: function() {},
+                    clipboardData : {
+                        getData: function () {
+                            return e.detail || "";
+                        },
+                        items: ["text/plain"]
+                    }
+                };
+                //trigger("paste",pasteObj);
+                if(reactProps) {
+                    reactProps.onPaste(pasteObj);
+                }
+            });
+
+            var trigger = function(eventName,data){
+                if(!eventRegister[eventName]) return;
+                for(var i = 0; i<eventRegister[eventName].length; i++){
+                    var listener = eventRegister[eventName][i];
+                    listener(new CustomEvent(eventName),data);
+                }
+            };
+
+            var nativeEventListener = document.addEventListener.bind(document);
+            document.addEventListener = function(eventName, callback, options) {
+                console.log("registering event",eventName);
+                var eventRegisterItem = eventRegister[eventName] || [];
+                eventRegisterItem.push(callback);
+                eventRegister[eventName] = eventRegisterItem;
+                nativeEventListener(eventName, callback, options);
+            };
+
+        })() })()</script></html>
